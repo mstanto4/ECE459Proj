@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity c17Netlist is
+  port (
+    G1gat : in std_logic;
+    G2gat : in std_logic;
+    G3gat : in std_logic;
+    G6gat : in std_logic;
+    G7gat : in std_logic;
+    G22gat : out std_logic;
+    G22gat : out std_logic
+  );
+
+architecture behavioral of c17Netlist is
+begin
+  G10gat <= G1gat nand G3gat;
+  G11gat <= G3gat nand G6gat;
+  G16gat <= G2gat nand G11gat;
+  G19gat <= G11gat nand G7gat;
+  G22gat <= G10gat nand G16gat;
+  G23gat <= G16gat nand G19gat;
+end behavioral

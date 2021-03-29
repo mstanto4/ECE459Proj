@@ -64,6 +64,31 @@ for i in range(curline, len(lines)):
 	curline = curline + 1	
 
 #print in correct output for VHDL file
+print("library IEEE;")
+print("use IEEE.STD_LOGIC_1164.ALL;\n")
+
+title = sys.argv[1].split('.')
+print("entity " + title[0] + " is")
+
+print("  port (")
+
+for i in range(0, len(inputs)):
+	print("    " + inputs[i] + " : in std_logic;")
+
+for i in range(0, len(outputs) - 1):
+	print("    " + outputs[i] + " : out std_logic;")
+
+print("    " + outputs[i] + " : out std_logic")
+print("  );\n")
+
+print("architecture behavioral of " + title[0] + " is")
+print("begin")
+
+for i in range(0, len(code)):
+	print("  " + code[i])
+
+print("end behavioral")
+
 
 
 
