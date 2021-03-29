@@ -72,18 +72,31 @@ print("entity " + title[0] + " is")
 
 print("  port (")
 
+#print inputs
 for i in range(0, len(inputs)):
 	print("    " + inputs[i] + " : in std_logic;")
 
+#print outputs
 for i in range(0, len(outputs) - 1):
 	print("    " + outputs[i] + " : out std_logic;")
 
-print("    " + outputs[i] + " : out std_logic")
+print("    " + outputs[len(outputs) - 1] + " : out std_logic")
 print("  );\n")
 
 print("architecture behavioral of " + title[0] + " is")
+
+#print signals
+signal = "  signal "
+for i in range(0, len(signals) - 1):
+	if(i % 10 == 0 and i != 0):
+		signal = signal + "\n"
+	signal = signal + signals[i] + ", "
+		
+signal = signal + signals[len(signals) - 1] + ": std_logic;"
+print(signal)
 print("begin")
 
+#print converted code
 for i in range(0, len(code)):
 	print("  " + code[i])
 

@@ -9,10 +9,11 @@ entity c17Netlist is
     G6gat : in std_logic;
     G7gat : in std_logic;
     G22gat : out std_logic;
-    G22gat : out std_logic
+    G23gat : out std_logic
   );
 
 architecture behavioral of c17Netlist is
+  signal G10gat, G11gat, G16gat, G19gat: std_logic;
 begin
   G10gat <= G1gat nand G3gat;
   G11gat <= G3gat nand G6gat;
