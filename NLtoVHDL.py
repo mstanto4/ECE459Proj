@@ -4,28 +4,34 @@ import sys
 signals = []
 inputs = []
 outputs = []
+code = []
 
 netlist = open(sys.argv[1], "r")
 lines = netlist.readlines()
 
+#skip comment sections
 curline = 0
 while(lines[curline][0] == "#"):
 	curline = curline + 1
 
+#save inputs
 while(lines[curline][0] == "I"):
 	temp = lines[curline].strip().split('(')
 	temp = temp[1].split(')')
 	inputs.append(temp[0])
 	curline = curline + 1
 
+#save outputs
 while(lines[curline][0] == "O"):
 	temp = lines[curline].strip().split('(')
 	temp = temp[1].split(')')
 	outputs.append(temp[0])
 	curline = curline + 1
 
+#skip empty line
 curline = curline + 1
 
+#convert to VHDL code
 for i in range(curline, len(lines)):
 	temp = lines[i].strip().split('=')
 	result = temp[0].strip()
@@ -44,7 +50,7 @@ for i in range(curline, len(lines)):
 		temp4 = temp3[1].strip().split(')')
 		input2 = temp4[0]	
 		
-		VHDL = result + " <= " + input1 + " " +  operation + " " + input2 + ";"
+		code.append(result + " <= " + input1 + " " +  operation + " " + input2 + ";")
 	else:
 		
 		temp3 = temp2[1].strip().split('(')
@@ -52,11 +58,14 @@ for i in range(curline, len(lines)):
 		input1 = temp3[0]		
 
 		if(operation == "not"):		
-			VHDL = result + " <= " + operation + " " + input1 + ";" 
+			code.append(result + " <= " + operation + " " + input1 + ";") 
 		else:
-			VHDL = result + " <= " + input1 + ";"
-	print(VHDL)
+			code.append(result + " <= " + input1 + ";")
 	curline = curline + 1	
+
+#print in correct output for VHDL file
+
+
 
 
 
