@@ -100,7 +100,7 @@ print("begin")
 for i in range(0, len(code)):
 	print("  " + code[i])
 
-print("end behavioral")
+print("end behavioral;")
 
 
 

@@ -21,4 +21,4 @@ begin
   G19gat <= G11gat nand G7gat;
   G22gat <= G10gat nand G16gat;
   G23gat <= G16gat nand G19gat;
-end behavioral
+end behavioral;

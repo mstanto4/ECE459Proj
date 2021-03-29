@@ -1031,4 +1031,4 @@ begin
   G376 <= G1212 nand G1221;
   G55 <= G375 nand G376;
   G57 <= G55 and G56;
-end behavioral
+end behavioral;
