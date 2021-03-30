@@ -81,7 +81,8 @@ for i in range(0, len(outputs) - 1):
 	print("    " + outputs[i] + " : out std_logic;")
 
 print("    " + outputs[len(outputs) - 1] + " : out std_logic")
-print("  );\n")
+print("  );")
+print("end " + title[0] + ";\n")
 
 print("architecture behavioral of " + title[0] + " is")
 

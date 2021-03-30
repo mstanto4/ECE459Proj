@@ -68,6 +68,7 @@ entity c6288Netlist is
     G6287gat : out std_logic;
     G6288gat : out std_logic
   );
+end c6288Netlist;
 
 architecture behavioral of c6288Netlist is
   signal G546gat, G549gat, G552gat, G555gat, G558gat, G561gat, G564gat, G567gat, G570gat, G573gat, 

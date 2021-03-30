@@ -62,6 +62,7 @@ entity c1908Netlist is
     G72 : out std_logic;
     G57 : out std_logic
   );
+end c1908Netlist;
 
 architecture behavioral of c1908Netlist is
   signal G149, G153, G156, G160, G165, G168, G171, G175, G179, G184, 
