@@ -1,0 +1,64 @@
+test    1: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test    2: 00001 01    6 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+	*******************************************************
+	*                                                     *
+	*            Welcome to HOPE (version 2.0)            *
+	*                                                     *
+	*               Dong S. Ha (ha@vt.edu)                *
+	*            Web: http://www.ee.vt.edu/ha             *
+	*  Virginia Polytechnic Institute & State University  *
+	*                                                     *
+	*******************************************************
+
+******   SUMMARY OF SIMULATION RESULTS   ******
+1. Circuit structure
+   Name of circuit                           : c17_
+   Number of primary inputs                  : 5
+   Number of primary outputs                 : 2
+   Number of combinational gates             : 6
+   Number of flip-flops                      : 0
+   Level of the circuit                      : 3
+
+2. Simulator input parameters
+   Simulation mode                           : file (c17.test)
+
+3. Simulation results
+   Number of test patterns applied           : 2
+   Fault coverage                            : 36.364 %
+   Number of collapsed faults                : 22
+   Number of detected faults                 : 8
+   Number of undetected faults               : 14
+
+4. Memory used                               : 37474 Kbytes
+
+5. CPU time
+   Initialization                            : 0.000 secs
+   Fault simulation                          : 0.000 secs
+   Total                                     : 0.000 secs
+
+* List of undetected faults:
+   1. G10gat /1
+   2. G22gat /0
+   3. G16gat->G22gat /1
+   4. G3gat->G10gat /1
+   5. G1gat /1
+   6. G3gat /0
+   7. G3gat /1
+   8. G16gat /1
+   9. G11gat->G16gat /1
+  10. G3gat->G11gat /1
+  11. G11gat /1
+  12. G6gat /1
+  13. G16gat->G23gat /1
+  14. G11gat->G19gat /1

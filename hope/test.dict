@@ -1,0 +1,646 @@
+test    1: 111 1    1 faults detected
+	   Z5 /0
+test    2: 000 0    1 faults detected
+	   Z5 /1
+test    3: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test    4: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test    5: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test    6: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test    7: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test    8: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test    9: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   10: 111 1    1 faults detected
+	   Z5 /0
+test   11: 111 1    1 faults detected
+	   Z5 /0
+test   12: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   13: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   14: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   15: 111 1    1 faults detected
+	   Z5 /0
+test   16: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   17: 111 1    1 faults detected
+	   Z5 /0
+test   18: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   19: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   20: 111 1    1 faults detected
+	   Z5 /0
+test   21: 000 0    1 faults detected
+	   Z5 /1
+test   22: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   23: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   24: 111 1    1 faults detected
+	   Z5 /0
+test   25: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   26: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   27: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   28: 000 0    1 faults detected
+	   Z5 /1
+test   29: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   30: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   31: 000 0    1 faults detected
+	   Z5 /1
+test   32: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   33: 111 1    1 faults detected
+	   Z5 /0
+test   34: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   35: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   36: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   37: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   38: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   39: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   40: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   41: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   42: 000 0    1 faults detected
+	   Z5 /1
+test   43: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   44: 000 0    1 faults detected
+	   Z5 /1
+test   45: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   46: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   47: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   48: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   49: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   50: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   51: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   52: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   53: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   54: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   55: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   56: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   57: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   58: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   59: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   60: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   61: 000 0    1 faults detected
+	   Z5 /1
+test   62: 111 1    1 faults detected
+	   Z5 /0
+test   63: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   64: 111 1    1 faults detected
+	   Z5 /0
+test   65: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   66: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   67: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   68: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   69: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   70: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   71: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   72: 111 1    1 faults detected
+	   Z5 /0
+test   73: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   74: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   75: 000 0    1 faults detected
+	   Z5 /1
+test   76: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   77: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   78: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   79: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   80: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   81: 111 1    1 faults detected
+	   Z5 /0
+test   82: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   83: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   84: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   85: 000 0    1 faults detected
+	   Z5 /1
+test   86: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   87: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   88: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   89: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   90: 000 0    1 faults detected
+	   Z5 /1
+test   91: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test   92: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   93: 111 1    1 faults detected
+	   Z5 /0
+test   94: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test   95: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test   96: 000 0    1 faults detected
+	   Z5 /1
+test   97: 000 0    1 faults detected
+	   Z5 /1
+test   98: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test   99: 111 1    1 faults detected
+	   Z5 /0
+test  100: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  101: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  102: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  103: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  104: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  105: 111 1    1 faults detected
+	   Z5 /0
+test  106: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  107: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  108: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  109: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  110: 111 1    1 faults detected
+	   Z5 /0
+test  111: 000 0    1 faults detected
+	   Z5 /1
+test  112: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  113: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  114: 111 1    1 faults detected
+	   Z5 /0
+test  115: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  116: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  117: 000 0    1 faults detected
+	   Z5 /1
+test  118: 000 0    1 faults detected
+	   Z5 /1
+test  119: 111 1    1 faults detected
+	   Z5 /0
+test  120: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  121: 000 0    1 faults detected
+	   Z5 /1
+test  122: 000 0    1 faults detected
+	   Z5 /1
+test  123: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  124: 000 0    1 faults detected
+	   Z5 /1
+test  125: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  126: 000 0    1 faults detected
+	   Z5 /1
+test  127: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  128: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  129: 111 1    1 faults detected
+	   Z5 /0
+test  130: 000 0    1 faults detected
+	   Z5 /1
+test  131: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  132: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  133: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  134: 000 0    1 faults detected
+	   Z5 /1
+test  135: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  136: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  137: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  138: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  139: 000 0    1 faults detected
+	   Z5 /1
+test  140: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  141: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  142: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  143: 000 0    1 faults detected
+	   Z5 /1
+test  144: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  145: 000 0    1 faults detected
+	   Z5 /1
+test  146: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  147: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  148: 000 0    1 faults detected
+	   Z5 /1
+test  149: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  150: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  151: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  152: 111 1    1 faults detected
+	   Z5 /0
+test  153: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  154: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  155: 111 1    1 faults detected
+	   Z5 /0
+test  156: 000 0    1 faults detected
+	   Z5 /1
+test  157: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  158: 000 0    1 faults detected
+	   Z5 /1
+test  159: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  160: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  161: 000 0    1 faults detected
+	   Z5 /1
+test  162: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  163: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  164: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  165: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  166: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  167: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  168: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  169: 111 1    1 faults detected
+	   Z5 /0
+test  170: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  171: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  172: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  173: 111 1    1 faults detected
+	   Z5 /0
+test  174: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  175: 111 1    1 faults detected
+	   Z5 /0
+test  176: 111 1    1 faults detected
+	   Z5 /0
+test  177: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  178: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  179: 000 0    1 faults detected
+	   Z5 /1
+test  180: 000 0    1 faults detected
+	   Z5 /1
+test  181: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  182: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  183: 111 1    1 faults detected
+	   Z5 /0
+test  184: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  185: 111 1    1 faults detected
+	   Z5 /0
+test  186: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  187: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  188: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  189: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  190: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  191: 111 1    1 faults detected
+	   Z5 /0
+test  192: 111 1    1 faults detected
+	   Z5 /0
+test  193: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  194: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  195: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  196: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  197: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  198: 000 0    1 faults detected
+	   Z5 /1
+test  199: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  200: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  201: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  202: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  203: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  204: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  205: 000 0    1 faults detected
+	   Z5 /1
+test  206: 010 0    2 faults detected
+	   Z5 /1
+	   X1 /1
+test  207: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  208: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  209: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  210: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  211: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  212: 110 1    2 faults detected
+	   Z5 /0
+	   G4 /0
+test  213: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  214: 000 0    1 faults detected
+	   Z5 /1
+test  215: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  216: 100 0    2 faults detected
+	   Z5 /1
+	   X2 /1
+test  217: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  218: 111 1    1 faults detected
+	   Z5 /0
+test  219: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  220: 101 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  221: 011 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  222: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  223: 001 1    2 faults detected
+	   Z5 /0
+	   X3 /0
+test  224: 111 1    1 faults detected
+	   Z5 /0
+	*******************************************************
+	*                                                     *
+	*            Welcome to HOPE (version 2.0)            *
+	*                                                     *
+	*               Dong S. Ha (ha@vt.edu)                *
+	*            Web: http://www.ee.vt.edu/ha             *
+	*  Virginia Polytechnic Institute & State University  *
+	*                                                     *
+	*******************************************************
+
+******   SUMMARY OF SIMULATION RESULTS   ******
+1. Circuit structure
+   Name of circuit                           : test
+   Number of primary inputs                  : 3
+   Number of primary outputs                 : 1
+   Number of combinational gates             : 2
+   Number of flip-flops                      : 0
+   Level of the circuit                      : 2
+
+2. Simulator input parameters
+   Simulation mode                           : random
+   Initial random number generator seed      : 1617141955
+
+3. Simulation results
+   Number of test patterns applied           : 224
+   Fault coverage                            : 100.000 %
+   Number of collapsed faults                : 6
+   Number of detected faults                 : 6
+   Number of undetected faults               : 0
+
+4. Memory used                               : 12009 Kbytes
+
+5. CPU time
+   Initialization                            : 0.000 secs
+   Fault simulation                          : 0.000 secs
+   Total                                     : 0.000 secs
+
+* List of undetected faults:
