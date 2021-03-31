@@ -48,13 +48,31 @@ for i in range(curline, len(lines)):
 		input1 = temp3[0]
 		
 		temp3[len(temp3) - 1] = temp3[len(temp3) - 1][0:len(temp3[len(temp3) - 1]) - 1]
-		print(temp3)	
-		
-		codeStr = result + " <= " + temp3[0] + " "
+		if(operation == "nand" and len(temp3) > 2):
+			newop = True
+			operation = "and"
+		elif(operation == "nor" and len(temp3) > 2):
+			newop = True
+			operation = "or"		
+		else:
+			newop = False
+	
+		codeStr = result + " <= "
+	
+		if(newop == True):
+			codeStr = codeStr + "not (" + temp3[0] + " "
+		else:
+			codeStr = codeStr + temp3[0] + " "
+
 		for i in range(1, len(temp3) - 1):
 			codeStr = codeStr + operation + " " + temp3[i] + " "
-		codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] + ";" 	
+		codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] 	
 	
+		if(newop == True):
+			codeStr = codeStr + ");"
+		else:
+			codeStr = codeStr + ";"
+
 		code.append(codeStr)
 	else:
 		
@@ -72,8 +90,9 @@ for i in range(curline, len(lines)):
 print("library IEEE;")
 print("use IEEE.STD_LOGIC_1164.ALL;\n")
 
-title = sys.argv[1].split('.')
-print("entity " + title[0] + " is")
+titlefirst = sys.argv[1].split('.')
+title = titlefirst[0].split('/')
+print("entity " + title[1] + " is")
 
 print("  port (")
 
@@ -87,9 +106,9 @@ for i in range(0, len(outputs) - 1):
 
 print("    " + outputs[len(outputs) - 1] + " : out std_logic")
 print("  );")
-print("end " + title[0] + ";\n")
+print("end " + title[1] + ";\n")
 
-print("architecture behavioral of " + title[0] + " is")
+print("architecture behavioral of " + title[1] + " is")
 
 #print signals
 signal = "  signal "
