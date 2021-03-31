@@ -46,17 +46,22 @@ for i in range(curline, len(lines)):
 	if(operation != "buf" and operation != "not"):
 		temp3 = temp2[1].split(',')
 		input1 = temp3[0]
-
-		temp4 = temp3[1].strip().split(')')
-		input2 = temp4[0]	
 		
-		code.append(result + " <= " + input1 + " " +  operation + " " + input2 + ";")
+		temp3[len(temp3) - 1] = temp3[len(temp3) - 1][0:len(temp3[len(temp3) - 1]) - 1]
+		print(temp3)	
+		
+		codeStr = result + " <= " + temp3[0] + " "
+		for i in range(1, len(temp3) - 1):
+			codeStr = codeStr + operation + " " + temp3[i] + " "
+		codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] + ";" 	
+	
+		code.append(codeStr)
 	else:
 		
 		temp3 = temp2[1].strip().split('(')
 		temp3 = temp3[0].split(')')
 		input1 = temp3[0]		
-
+		
 		if(operation == "not"):		
 			code.append(result + " <= " + operation + " " + input1 + ";") 
 		else:
