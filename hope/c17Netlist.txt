@@ -1,5 +1,4 @@
-# c17 
-# iscas example (to test conversion program only)
+# c17 iscas example (to test conversion program only)
 # ---------------------------------------------------
 # 
 # 
