@@ -1,0 +1,10 @@
+#test
+
+INPUT(X1)
+INPUT(X2)
+INPUT(X3)
+OUTPUT(Z5)
+
+G4 = and(X1, X2)
+Z5 = or(G4, X3)
+

@@ -1,0 +1,1731 @@
+test    1: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test    2: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test    3: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test    4: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test    5: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test    6: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test    7: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test    8: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test    9: 00001 01    6 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   10: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   11: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   12: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   13: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   14: 00010 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   15: 10100 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   16: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   17: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test   18: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   19: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test   20: 00101 01    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   21: 01010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   22: 00101 01    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   23: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   24: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   25: 00010 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   26: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   27: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   28: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   29: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   30: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   31: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   32: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   33: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   34: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test   35: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   36: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   37: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   38: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   39: 01011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test   40: 00010 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   41: 01010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   42: 11001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test   43: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   44: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   45: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   46: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   47: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test   48: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   49: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test   50: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test   51: 00101 01    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   52: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   53: 11110 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test   54: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   55: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   56: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   57: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test   58: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   59: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   60: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   61: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   62: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   63: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test   64: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   65: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   66: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test   67: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   68: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test   69: 10100 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   70: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test   71: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test   72: 11110 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test   73: 01010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   74: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   75: 10100 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test   76: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   77: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   78: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test   79: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   80: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   81: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test   82: 01011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test   83: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test   84: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   85: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test   86: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test   87: 00101 01    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   88: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   89: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test   90: 00101 01    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   91: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   92: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   93: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   94: 00001 01    6 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   95: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test   96: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test   97: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test   98: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test   99: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  100: 01000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  101: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  102: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  103: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test  104: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test  105: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  106: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  107: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  108: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  109: 00010 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  110: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  111: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  112: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  113: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  114: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  115: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  116: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  117: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  118: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  119: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  120: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  121: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test  122: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test  123: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  124: 01011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test  125: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  126: 11001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  127: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  128: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  129: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  130: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  131: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  132: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test  133: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  134: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  135: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  136: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  137: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  138: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test  139: 10000 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  140: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  141: 11001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  142: 01010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  143: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  144: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  145: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  146: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  147: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  148: 10001 01    8 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test  149: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  150: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  151: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  152: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  153: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test  154: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  155: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  156: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  157: 01010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  158: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  159: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  160: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  161: 01000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  162: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  163: 01011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test  164: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  165: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  166: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  167: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  168: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  169: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  170: 11010 11    8 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  171: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  172: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  173: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test  174: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  175: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test  176: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  177: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  178: 10101 11    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G11gat /0
+	   G6gat /1
+	   G19gat /1
+	   G23gat /0
+test  179: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  180: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  181: 01101 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  182: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  183: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  184: 11000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  185: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  186: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  187: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+test  188: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  189: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  190: 11110 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  191: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  192: 11100 11    6 faults detected
+	   G22gat /0
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  193: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  194: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  195: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  196: 00111 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  197: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  198: 11101 11    4 faults detected
+	   G22gat /0
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+test  199: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  200: 10100 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  201: 01000 11    6 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+	   G16gat->G23gat /1
+test  202: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  203: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  204: 00011 01    8 faults detected
+	   G22gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  205: 00001 01    6 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G19gat /1
+	   G23gat /0
+test  206: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  207: 10100 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  208: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  209: 00010 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  210: 00100 00    6 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  211: 11111 10    8 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  212: 01111 00    8 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  213: 11011 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G3gat /1
+	   G16gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G23gat /0
+test  214: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  215: 10000 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  216: 10010 00    7 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  217: 10110 10    5 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G23gat /1
+test  218: 01110 00    7 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G3gat /0
+	   G16gat /0
+	   G11gat->G16gat /1
+	   G11gat /1
+	   G23gat /1
+test  219: 00000 00    5 faults detected
+	   G22gat /1
+	   G16gat /0
+	   G2gat /1
+	   G23gat /1
+	   G7gat /1
+test  220: 01001 11    5 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G23gat /0
+test  221: 10111 10    7 faults detected
+	   G10gat /1
+	   G22gat /0
+	   G3gat /0
+	   G16gat /0
+	   G11gat /1
+	   G23gat /1
+	   G11gat->G19gat /1
+test  222: 01100 11    7 faults detected
+	   G22gat /0
+	   G16gat->G22gat /1
+	   G16gat /1
+	   G11gat /0
+	   G6gat /1
+	   G23gat /0
+	   G16gat->G23gat /1
+test  223: 10011 01    9 faults detected
+	   G22gat /1
+	   G3gat->G10gat /1
+	   G3gat /1
+	   G16gat /0
+	   G2gat /1
+	   G11gat /0
+	   G3gat->G11gat /1
+	   G19gat /1
+	   G23gat /0
+test  224: 00110 00    4 faults detected
+	   G22gat /1
+	   G1gat /1
+	   G16gat /0
+	   G23gat /1
+	*******************************************************
+	*                                                     *
+	*            Welcome to HOPE (version 2.0)            *
+	*                                                     *
+	*               Dong S. Ha (ha@vt.edu)                *
+	*            Web: http://www.ee.vt.edu/ha             *
+	*  Virginia Polytechnic Institute & State University  *
+	*                                                     *
+	*******************************************************
+
+******   SUMMARY OF SIMULATION RESULTS   ******
+1. Circuit structure
+   Name of circuit                           : c17_
+   Number of primary inputs                  : 5
+   Number of primary outputs                 : 2
+   Number of combinational gates             : 6
+   Number of flip-flops                      : 0
+   Level of the circuit                      : 3
+
+2. Simulator input parameters
+   Simulation mode                           : random
+   Initial random number generator seed      : 1617134631
+
+3. Simulation results
+   Number of test patterns applied           : 224
+   Fault coverage                            : 100.000 %
+   Number of collapsed faults                : 22
+   Number of detected faults                 : 22
+   Number of undetected faults               : 0
+
+4. Memory used                               : 22904 Kbytes
+
+5. CPU time
+   Initialization                            : 0.000 secs
+   Fault simulation                          : 0.000 secs
+   Total                                     : 0.000 secs
+
+* List of undetected faults:
