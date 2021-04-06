@@ -30,24 +30,26 @@ while(lines[curline][0] == "O"):
 
 #skip empty line
 curline = curline + 1
-
+keynum = 0
 #convert to VHDL code
-for i in range(curline, len(lines)):
+for i in range(curline, len(lines)-1):
 	temp = lines[i].strip().split('=')
 	result = temp[0].strip()
 	
 	if(not(result in inputs) and not(result in outputs)):
 		if(not(result in signals)):
 			signals.append(result)
-
+	
 	temp2 = temp[1].strip().split('(')
 	operation = temp2[0]
 	
 	if(operation != "buf" and operation != "not"):
 		temp3 = temp2[1].split(',')
-		input1 = temp3[0]
-		
-		temp3[len(temp3) - 1] = temp3[len(temp3) - 1][0:len(temp3[len(temp3) - 1]) - 1]
+		if(" key" in temp3):
+			key = True
+		else:
+			key = False
+			temp3[len(temp3) - 1] = temp3[len(temp3) - 1][0:len(temp3[len(temp3) - 1]) - 1]
 		if(operation == "nand" and len(temp3) > 2):
 			newop = True
 			operation = "and"
@@ -60,13 +62,26 @@ for i in range(curline, len(lines)):
 		codeStr = result + " <= "
 	
 		if(newop == True):
-			codeStr = codeStr + "not (" + temp3[0] + " "
+			if(temp3[0] == " key"):
+				codeStr = codeStr + "not (" + temp3[0] + "(" + str(keynum) + ") "
+			else:
+				codeStr = codeStr + "not (" + temp3[0] + " "
 		else:
-			codeStr = codeStr + temp3[0] + " "
-
+			if(temp3[0] == " key"):
+				codeStr = codeStr + temp3[0] + "(" + str(keynum) + ") "
+			else:
+				codeStr = codeStr + temp3[0] + " "
+					
 		for i in range(1, len(temp3) - 1):
-			codeStr = codeStr + operation + " " + temp3[i] + " "
-		codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] 	
+			if(temp3[i] == " key"):
+				codeStr = codeStr + operation + " " + temp3[i] + "(" + str(keynum) + ") "
+			else:
+				codeStr = codeStr + operation + " " + temp3[i] + " "
+		
+		if(temp3[len(temp3) - 1] == " key"):
+			codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] + "(" + str(keynum) + ")"		
+		else:		
+			codeStr = codeStr + operation + " " + temp3[len(temp3) - 1] 	
 	
 		if(newop == True):
 			codeStr = codeStr + ");"
@@ -74,11 +89,13 @@ for i in range(curline, len(lines)):
 			codeStr = codeStr + ";"
 
 		code.append(codeStr)
+		if(key == True):
+			keynum = keynum + 1
+
 	else:
 		
 		temp3 = temp2[1].strip().split('(')
-		temp3 = temp3[0].split(')')
-		input1 = temp3[0]		
+		input1 = temp3[0][0:len(temp3[0])-1]		
 		
 		if(operation == "not"):		
 			code.append(result + " <= " + operation + " " + input1 + ";") 
@@ -119,6 +136,15 @@ for i in range(0, len(signals) - 1):
 		
 signal = signal + signals[len(signals) - 1] + ": std_logic;"
 print(signal)
+
+tempkey = lines[len(lines)-1].split("#")
+keysig = tempkey[1][1:len(tempkey[1])-1]
+keylen = len(keysig)
+if(keylen > 1):
+	print("  signal key: std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
+else:
+	print("  signal key: std_logic := '" + keysig + "';")
+
 print("begin")
 
 #print converted code

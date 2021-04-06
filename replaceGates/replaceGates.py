@@ -6,6 +6,7 @@ key = []
 nodes = []
 FI = []
 gateStr = "gate"
+tempStr = "temp"
 
 #sys.argv[1] = netlist
 #sys.argv[2] = faultImpact
@@ -54,8 +55,10 @@ for i in range(0, int(sys.argv[3])):
 		#insert xnor
 		if(randop == 1):
 			op = "xnor"
+			value = 1
 		else:
 			op = "xor"
+			value = 0
 
 		randinv = random.randint(0,1)
 		newgateStr = gateStr + str(i+1)
@@ -68,11 +71,14 @@ for i in range(0, int(sys.argv[3])):
 				lines[indicies[k]] = temp[0] + invStr + temp[1]
 		#do not add inverter
 		if(randinv == 0):
-			key.append(0)	
+			key.insert(0,value)	
 			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
 		#add inverter
 		else:
-			key.append(1)
+			if(value == 1):
+				key.insert(0,0)
+			else:
+				key.insert(0,1)
 			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
 			lines.append(invStr + " = not(" + newgateStr + ")")
 	else:	
@@ -105,22 +111,31 @@ for i in range(0, int(sys.argv[3])):
 			for l in range(curline, lineLen):
 				if(nodes[i] in lines[l]):
 					temp = lines[l].split(nodes[i])
+					lines[l] = tempStr + str(i) + temp[1]	
 					if(randinv == 0):
-						lines[l] = newgateStr + temp[1]	
 						lines.append(nodes[i] + " = buf(" + newgateStr + ")")	
 					else:
-						lines[l] = invStr + temp[1]	
-						lines.append(nodes[i] + " = buf(" + invStr + ")")	
-
-		#do not add inverter
-		if(randinv == 0):
-			key.append(0)	
-			lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
-		#add inverter
+						lines.append(nodes[i] + " = buf(" + invStr + ")")
+			#do not add inverter
+			if(randinv == 0):
+				key.insert(0,0)	
+				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
+			#add inverter
+			else:
+				key.insert(0,1)
+				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
+				lines.append(invStr + " = not(" + newgateStr + ")")
+		
 		else:
-			key.append(1)
-			lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
-			lines.append(invStr + " = not(" + newgateStr + ")")
+			#do not add inverter
+			if(randinv == 0):
+				key.insert(0,0)	
+				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
+			#add inverter
+			else:
+				key.insert(0,1)
+				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
+				lines.append(invStr + " = not(" + newgateStr + ")")
 
 for line in lines:
 	print(line)
