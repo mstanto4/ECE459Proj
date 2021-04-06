@@ -28,7 +28,10 @@ G10gat = nand(G1gat, G3gat)
 G11gat = nand(G3gat, G6gat)
 G16gat = nand(G2gat, G11gat)
 G19gat = nand(G11gat, G7gat)
-G22gat = nand(G10gat, gate1)
+temp1 = nand(G10gat, gate1)
 G23gat = nand(gate1, G19gat)
 gate1 = xor(G16gat, key(0))
-# 0
+G22gat = buf(gate2inv)
+gate2 = xnor(temp1, key(1))
+gate2inv = not(gate2)
+# 10
