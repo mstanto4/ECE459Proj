@@ -40,7 +40,41 @@ lineLen = len(lines)
 
 for i in range(0, int(sys.argv[3])):
 	if("->" in nodes[i]):
-		print("one")		
+		indicies = []
+		arrow = nodes[i].split("->")
+		for j in range(curline, lineLen):
+			if(arrow[0] in lines[j]):
+				index = lines[j].index(arrow[0])
+				#not an output
+				if(index > 0):
+					if(arrow[1] in lines[j]):
+						indicies.append(j)
+				
+		randop = random.randint(0,1)
+		#insert xnor
+		if(randop == 1):
+			op = "xnor"
+		else:
+			op = "xor"
+
+		randinv = random.randint(0,1)
+		newgateStr = gateStr + str(i+1)
+		invStr = newgateStr + "inv"
+		for k in range(0, len(indicies)):
+			temp = lines[indicies[k]].split(arrow[0])
+			if(randinv == 0):
+				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
+			else:		
+				lines[indicies[k]] = temp[0] + invStr + temp[1]
+		#do not add inverter
+		if(randinv == 0):
+			key.append(0)	
+			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
+		#add inverter
+		else:
+			key.append(1)
+			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
+			lines.append(invStr + " = not(" + newgateStr + ")")
 	else:	
 		indicies = []
 		for j in range(curline, lineLen):
