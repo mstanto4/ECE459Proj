@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity c17EncNetlist is
+  port (
+    G1gat : in std_logic;
+    G2gat : in std_logic;
+    G3gat : in std_logic;
+    G6gat : in std_logic;
+    G7gat : in std_logic;
+    G22gat : out std_logic;
+    G23gat : out std_logic
+  );
+end c17EncNetlist;
+
+architecture behavioral of c17EncNetlist is
+  signal G10gat, G11gat, G16gat, G19gat, temp1, gate1, gate2, gate2inv: std_logic;
+  signal key: std_logic_vector(1 downto 0) := "10";
+begin
+  G10gat <= G1gat nand  G3gat;
+  G11gat <= G3gat nand  G6gat;
+  G16gat <= G2gat nand  G11gat;
+  G19gat <= G11gat nand  G7gat;
+  temp1 <= G10gat nand  gate1;
+  G23gat <= gate1 nand  G19gat;
+  gate1 <= G16gat xor  key(0);
+  G22gat <= gate2inv;
+  gate2 <= temp1 xnor  key(1);
+  gate2inv <= not gate2;
+end behavioral;
