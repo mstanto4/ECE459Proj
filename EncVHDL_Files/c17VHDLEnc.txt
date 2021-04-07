@@ -3,11 +3,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity c17EncNetlist is
   port (
-    G1gat : in std_logic;
-    G2gat : in std_logic;
-    G3gat : in std_logic;
-    G6gat : in std_logic;
-    G7gat : in std_logic;
+    G1gat : in std_logic := '0';
+    G2gat : in std_logic := '0';
+    G3gat : in std_logic := '0';
+    G6gat : in std_logic := '0';
+    G7gat : in std_logic := '0';
+    key: in std_logic_vector(1 downto 0) := "10";
     G22gat : out std_logic;
     G23gat : out std_logic
   );
@@ -15,7 +16,6 @@ end c17EncNetlist;
 
 architecture behavioral of c17EncNetlist is
   signal G10gat, G11gat, G16gat, G19gat, temp1, gate1, gate2, gate2inv: std_logic;
-  signal key: std_logic_vector(1 downto 0) := "10";
 begin
   G10gat <= G1gat nand  G3gat;
   G11gat <= G3gat nand  G6gat;

@@ -115,7 +115,15 @@ print("  port (")
 
 #print inputs
 for i in range(0, len(inputs)):
-	print("    " + inputs[i] + " : in std_logic;")
+	print("    " + inputs[i] + " : in std_logic := '0';")
+
+tempkey = lines[len(lines)-1].split("#")
+keysig = tempkey[1][1:len(tempkey[1])-1]
+keylen = len(keysig)
+if(keylen > 1):
+	print("    key: in std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
+else:
+	print("    key: in std_logic := '" + keysig + "';")
 
 #print outputs
 for i in range(0, len(outputs) - 1):
@@ -136,14 +144,6 @@ for i in range(0, len(signals) - 1):
 		
 signal = signal + signals[len(signals) - 1] + ": std_logic;"
 print(signal)
-
-tempkey = lines[len(lines)-1].split("#")
-keysig = tempkey[1][1:len(tempkey[1])-1]
-keylen = len(keysig)
-if(keylen > 1):
-	print("  signal key: std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
-else:
-	print("  signal key: std_logic := '" + keysig + "';")
 
 print("begin")
 
