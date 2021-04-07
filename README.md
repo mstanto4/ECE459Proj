@@ -23,7 +23,7 @@
 	python3 EncNLtoEncVHDL.py EncNetlists/c1908EncNetlist.txt > EncVHDL_Files/c1908VHDLEnc.txt
 	python3 EncNLtoEncVHDL.py EncNetlists/c3540EncNetlist.txt > EncVHDL_Files/c3540VHDLEnc.txt
 
-### How to Move Files From "replaceGates" to "EncNetlists" (from main repository)
+#### How to Move Files From "replaceGates" to "EncNetlists" (from main repository)
 	cp replaceGates/c17EncNetlist.txt EncNetlists
 	cp replaceGates/c1908EncNetlist.txt EncNetlists
 	cp replaceGates/c3540EncNetlist.txt EncNetlists
