@@ -32,6 +32,14 @@
 	cp replaceGates/c17EncNetlist.txt EncNetlists/someothername
 	cp replaceGates/c1908EncNetlist.txt EncNetlists/someothername
 	cp replaceGates/c3540EncNetlist.txt EncNetlists/someothername
+	
+#### Create Test Bench Files (Shouldn't need to do again)
+	python3 NLtoTB.py Netlists/c17Netlist.txt > TB_Files/c17TB.txt 
+	python3 NLtoTB.py Netlists/c1908Netlist.txt > TB_Files/c1908TB.txt
+	python3 NLtoTB.py Netlists/c3540Netlist.txt > TB_Files/c3540TB.txt
+	python3 NLtoTB.py EncNetlists/c17EncNetlist.txt > TB_Files/c17EncTB.txt
+	python3 NLtoTB.py EncNetlists/c1908EncNetlist.txt > TB_Files/c1908EncTB.txt
+	python3 NLtoTB.py EncNetlists/c3540EncNetlist.txt > TB_Files/c3540EncTB.txt
 
 
 
