@@ -31,6 +31,7 @@ while(lines[curline][0] == "O"):
 #skip empty line
 curline = curline + 1
 keynum = 0
+keyin = False
 #convert to VHDL code
 for i in range(curline, len(lines)-1):
 	temp = lines[i].strip().split('=')
@@ -47,6 +48,7 @@ for i in range(curline, len(lines)-1):
 		temp3 = temp2[1].split(',')
 		if(" key" in temp3):
 			key = True
+			keyin = True
 		else:
 			key = False
 			temp3[len(temp3) - 1] = temp3[len(temp3) - 1][0:len(temp3[len(temp3) - 1]) - 1]
@@ -116,14 +118,14 @@ print("  port (")
 #print inputs
 for i in range(0, len(inputs)):
 	print("    " + inputs[i] + " : in std_logic := '0';")
-
-tempkey = lines[len(lines)-1].split("#")
-keysig = tempkey[1][1:len(tempkey[1])-1]
-keylen = len(keysig)
-if(keylen > 1):
-	print("    key: in std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
-else:
-	print("    key: in std_logic := '" + keysig + "';")
+if(keyin == True):
+	tempkey = lines[len(lines)-1].split("#")
+	keysig = tempkey[1][1:len(tempkey[1])-1]
+	keylen = len(keysig)
+	if(keylen > 1):
+		print("    key: in std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
+	else:
+		print("    key: in std_logic := '" + keysig + "';")
 
 #print outputs
 for i in range(0, len(outputs) - 1):
