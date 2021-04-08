@@ -33,7 +33,7 @@
 	cp replaceGates/c1908EncNetlist.txt EncNetlists/someothername
 	cp replaceGates/c3540EncNetlist.txt EncNetlists/someothername
 	
-#### Create Test Bench Files (Shouldn't need to do again)
+#### Create Test Bench Files (Will have to do if Encrypted Circuits are changed)
 	python3 NLtoTB.py Netlists/c17Netlist.txt > TB_Files/c17TB.txt 
 	python3 NLtoTB.py Netlists/c1908Netlist.txt > TB_Files/c1908TB.txt
 	python3 NLtoTB.py Netlists/c3540Netlist.txt > TB_Files/c3540TB.txt
