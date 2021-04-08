@@ -1,0 +1,19 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity c17EncNetlist_tb is
+-- Port ();
+end c17EncNetlist_tb;
+
+architecture behavioral of c17EncNetlist is
+  signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat, TG22gat, TG23gat: std_logic;
+  signal Tkey: std_logic_vector(1 downto 0) := "10";
+begin
+  L1: entity work.c17EncNetlist(behavioral)
+  port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G7gat=> TG7gat, G22gat=> TG22gat, key => Tkey, G23gat=> TG23gat);
+  process
+  begin
+
+
+  end process;
+end behavioral;
