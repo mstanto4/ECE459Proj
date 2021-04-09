@@ -112,13 +112,16 @@ if(key == True):
 	
 	else:
 		print("    -- Run simulation for a total of 40 ns")
-		print("    -- With Correct Key -- seen in " + title[1] + ".vhd")
+		print("      -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("      Tkey <= \"00\";")
 		print("      wait for 10 ns;")
+		print("      --With Incorrect Key 1")
 		print("      Tkey <= \"01\";")
 		print("      wait for 10 ns;")
+		print("      --With Incorrect Key 2")
 		print("      Tkey <= \"10\";")
 		print("      wait for 10 ns;")
+		print("      --With Incorrect Key 3")
 		print("      Tkey <= \"11\";")
 		print("      wait for 10 ns;")
 else:
