@@ -23,7 +23,6 @@ for line in FIlines:
 #sorted greatest to least	
 FI, nodes = (list(t) for t in zip(*sorted(zip(FI, nodes), reverse = True)))
 
-
 netlist = open(sys.argv[1], "r")
 lines = netlist.readlines()
 
@@ -34,6 +33,7 @@ for i in range(0, len(lines)):
 curline = 0
 while(len(lines[curline]) > 0):
 	curline = curline + 1
+
 #skip empty line
 curline = curline + 1
 
@@ -46,12 +46,15 @@ for i in range(0, int(sys.argv[3])):
 		for j in range(curline, lineLen):
 			if(arrow[0] in lines[j]):
 				index = lines[j].index(arrow[0])
+
 				#not an output
 				if(index > 0):
 					if(arrow[1] in lines[j]):
 						indicies.append(j)
 				
-		randop = random.randint(0,1)
+		#randop = random.randint(0,1)
+		randop = 0
+
 		#insert xnor
 		if(randop == 1):
 			op = "xnor"
@@ -60,21 +63,35 @@ for i in range(0, int(sys.argv[3])):
 			op = "xor"
 			value = 0
 
-		randinv = random.randint(0,1)
+		#randinv = random.randint(0,1)
+		randinv = 0
+
 		newgateStr = gateStr + str(i+1)
 		invStr = newgateStr + "inv"
+
 		for k in range(0, len(indicies)):
 			temp = lines[indicies[k]].split(arrow[0])
+
 			if(randinv == 0):
 				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
 			else:		
 				lines[indicies[k]] = temp[0] + invStr + temp[1]
+
 		#do not add inverter
 		if(randinv == 0):
-			key.insert(0,value)	
-			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
+			key.insert(0,value)
+			insertVal = newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))"
+
+			#TEST
+			print("insert val is", insertVal)
+
+			lines.append(insertVal)
 		#add inverter
 		else:
+
+			#TEST
+			print("invertor?")
+
 			if(value == 1):
 				key.insert(0,0)
 			else:
@@ -90,22 +107,32 @@ for i in range(0, int(sys.argv[3])):
 				if(index > 0):
 					indicies.append(j)
 					
-		randop = random.randint(0,1)
+		# randop = random.randint(0,1)
+		randop = 0;
+
 		#insert xnor
 		if(randop == 1):
 			op = "xnor"
 		else:
 			op = "xor"
 
-		randinv = random.randint(0,1)
+		# randinv = random.randint(0,1)
+		randinv = 0
+
+
 		newgateStr = gateStr + str(i+1)
+
 		invStr = newgateStr + "inv"
 		for k in range(0, len(indicies)):
 			temp = lines[indicies[k]].split(nodes[i])
+
+			print("temp is", temp)
+
 			if(randinv == 0):
 				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
 			else:		
 				lines[indicies[k]] = temp[0] + invStr + temp[1]
+
 		#node is output
 		if(len(indicies) == 0):
 			for l in range(curline, lineLen):
@@ -137,11 +164,13 @@ for i in range(0, int(sys.argv[3])):
 				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
 				lines.append(invStr + " = not(" + newgateStr + ")")
 
-for line in lines:
-	print(line)
-
-keyStr = "# "
-for bit in key:
-	keyStr = keyStr + str(bit)
-print(keyStr)
+# TEST
+# for line in lines:
+# 	print(line)
+#
+# TEST
+# keyStr = "# "
+# for bit in key:
+# 	keyStr = keyStr + str(bit)
+# print(keyStr)
 	
