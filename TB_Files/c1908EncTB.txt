@@ -23,39 +23,84 @@ begin
 
   process
   begin
-    -- Run simulation for a total of 110 ns
+    -- Run simulation for a total of 260.0 ns
       -- With Correct Key -- seen in c1908EncNetlist.vhd
       Tkey <= "00000000000000000000000000000000000000000000000000";
       wait for 10 ns;
         -- With Incorrect Key 1 which has 1 bits changed
-      Tkey <= "00000000000000000000000000000000010000000000000000";
+      Tkey <= "00000001000000000000000000000000000000000000000000";
       wait for 10 ns;
         -- With Incorrect Key 2 which has 2 bits changed
-      Tkey <= "00000000000000000000000000000000010000010000000000";
+      Tkey <= "00000001000000000000000000000000000000000000000001";
       wait for 10 ns;
         -- With Incorrect Key 3 which has 3 bits changed
-      Tkey <= "00000000000000000000000000000000010000010000001000";
+      Tkey <= "00000001000000000000000000000000000100000000000001";
       wait for 10 ns;
         -- With Incorrect Key 4 which has 4 bits changed
-      Tkey <= "00000000000000000000000000000000010000010100001000";
+      Tkey <= "00000001000000000000000000000001000100000000000001";
       wait for 10 ns;
         -- With Incorrect Key 5 which has 5 bits changed
-      Tkey <= "00001000000000000000000000000000010000010100001000";
+      Tkey <= "00000001000000000000000000000001000100000100000001";
       wait for 10 ns;
         -- With Incorrect Key 6 which has 6 bits changed
-      Tkey <= "00001000000000000010000000000000010000010100001000";
+      Tkey <= "00000001000000010000000000000001000100000100000001";
       wait for 10 ns;
         -- With Incorrect Key 7 which has 7 bits changed
-      Tkey <= "00011000000000000010000000000000010000010100001000";
+      Tkey <= "00000001000000010000000001000001000100000100000001";
       wait for 10 ns;
         -- With Incorrect Key 8 which has 8 bits changed
-      Tkey <= "00011000000010000010000000000000010000010100001000";
+      Tkey <= "00000001000000010000000001010001000100000100000001";
       wait for 10 ns;
         -- With Incorrect Key 9 which has 9 bits changed
-      Tkey <= "00011000000010000010100000000000010000010100001000";
+      Tkey <= "00000001000000010100000001010001000100000100000001";
       wait for 10 ns;
         -- With Incorrect Key 10 which has 10 bits changed
-      Tkey <= "00011000000010000010101000000000010000010100001000";
+      Tkey <= "00000001000000010100000001010001000100000100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 11 which has 11 bits changed
+      Tkey <= "00000001000000010100000001010001010100000100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 12 which has 12 bits changed
+      Tkey <= "00000001000000010100000001010001010100100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 13 which has 13 bits changed
+      Tkey <= "00000001000000010100000001010011010100100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 14 which has 14 bits changed
+      Tkey <= "00000001000000010100001001010011010100100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 15 which has 15 bits changed
+      Tkey <= "00000001000000010100001001010111010100100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 16 which has 16 bits changed
+      Tkey <= "00000001000000010100001001010111010101100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 17 which has 17 bits changed
+      Tkey <= "00000001000000010100101001010111010101100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 18 which has 18 bits changed
+      Tkey <= "00000011000000010100101001010111010101100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 19 which has 19 bits changed
+      Tkey <= "00000011000000010100101001010111011101100100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 20 which has 20 bits changed
+      Tkey <= "00000011000000010100101001010111011101101100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 21 which has 21 bits changed
+      Tkey <= "00000011000000010100101011010111011101101100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 22 which has 22 bits changed
+      Tkey <= "00000011000000010100101011110111011101101100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 23 which has 23 bits changed
+      Tkey <= "00000011000000011100101011110111011101101100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 24 which has 24 bits changed
+      Tkey <= "00000011000000011100101011110111011111101100000101";
+      wait for 10 ns;
+        -- With Incorrect Key 25 which has 25 bits changed
+      Tkey <= "00000011100000011100101011110111011111101100000101";
       wait for 10 ns;
   end process;
 end behavioral;
