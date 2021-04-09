@@ -2,6 +2,7 @@ import numpy as np
 import sys
 
 signals = []
+outputs = []
 
 netlist = open(sys.argv[1], "r")
 lines = netlist.readlines()
@@ -12,11 +13,19 @@ while(lines[curline][0] == "#"):
 	curline = curline + 1
 
 #save inputs
-while(lines[curline][0] == "I" or lines[curline][0] == "O"):
+while(lines[curline][0] == "I"):
 	temp = lines[curline].strip().split('(')
 	temp = temp[1].split(')')
 	signals.append(temp[0])
 	curline = curline + 1
+
+#save outputs
+while(lines[curline][0] == "O"):
+	temp = lines[curline].strip().split('(')
+	temp = temp[1].split(')')
+	curline = curline + 1
+	outputs.append(temp[0])
+
 
 if(lines[len(lines)-1][0] == "#"):
 	tempkey = lines[len(lines)-1].split("#")
@@ -48,6 +57,9 @@ for i in range(0, len(signals) - 1):
 signal = signal + "T" + signals[len(signals) - 1] + ": std_logic;"
 print(signal)
 
+#print output signal
+print("  signal Tout: std_logic_vector(" + str(len(outputs) - 1) + " downto 0);")
+
 if(key == True):
 	if(keylen > 1):
 		print("  signal Tkey: std_logic_vector(" + str(keylen-1) + " downto 0) := \"" + keysig + "\";")
@@ -61,15 +73,38 @@ for i in range(0, len(signals) - 1):
         if(i % 10 == 0 and i != 0):
                 portmap = portmap + "\n  "
         portmap = portmap + signals[i] + "=> T" + signals[i] + ", "
+for i in range(0, len(outputs)):
+	if(i % 10 == 0 and i != 0):
+		portmap = portmap + "\n  "
+	portmap = portmap + outputs[i] + "=> Tout(" + str(i) + "), "
+
 if(key == True):
 	portmap = portmap + "key => Tkey" + ", "
 
-portmap = portmap + signals[len(signals) - 1] + "=> T" + signals[len(signals) - 1] + ");"
+portmap = portmap + signals[len(signals) - 1] + "=> T" + signals[len(signals) - 1] + ");\n"
 
 print(portmap)
 
 print("  process")
-print("  begin\n\n")
+print("  begin")
+if(key == True):
+	if(keylen > 10):
+		print("    -- Run simulation for a total of 110 ns")
+
+	else:
+		print("    -- Run simulation for a total of 40 ns")
+		print("    With Correct Key -- seen in " + title[1] + ".vhd")
+		print("      Tkey <= \"00\";")
+		print("      wait for 10 ns;")
+		print("      Tkey <= \"01\";")
+		print("      wait for 10 ns;")
+		print("      Tkey <= \"10\";")
+		print("      wait for 10 ns;")
+		print("      Tkey <= \"11\";")
+		print("      wait for 10 ns;")
+else:
+	print("  -- Run simulation for a total of 10 ns")
+	print("    wait for 10 ns;")	
 
 print("  end process;")
 print("end behavioral;")

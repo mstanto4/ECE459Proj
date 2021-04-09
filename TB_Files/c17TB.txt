@@ -6,13 +6,15 @@ entity c17Netlist_tb is
 end c17Netlist_tb;
 
 architecture behavioral of c17Netlist is
-  signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat, TG22gat, TG23gat: std_logic;
+  signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat: std_logic;
+  signal Tout: std_logic_vector(1 downto 0);
 begin
   L1: entity work.c17Netlist(behavioral)
-  port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G7gat=> TG7gat, G22gat=> TG22gat, G23gat=> TG23gat);
+  port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G22gat=> Tout(0), G23gat=> Tout(1), G7gat=> TG7gat);
+
   process
   begin
-
-
+  -- Run simulation for a total of 10 ns
+    wait for 10 ns;
   end process;
 end behavioral;
