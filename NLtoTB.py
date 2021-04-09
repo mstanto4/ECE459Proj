@@ -95,8 +95,8 @@ if(key == True):
 		print("      -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("      Tkey <= \"" + keysig + "\";")
 		print("      wait for 10 ns;")
-		for i in range(0,11):
-			print("        -- With Incorrect Key " + str(i) + " which has " + str(i) + " bits changed")
+		for i in range(0,10):
+			print("        -- With Incorrect Key " + str(i+1) + " which has " + str(i+1) + " bits changed")
 			randnum = random.randint(0,keylen-1)
 			while(randnum in indexChange):
 				randnum = random.randint(0,keylen-1)
