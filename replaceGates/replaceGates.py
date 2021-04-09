@@ -52,8 +52,7 @@ for i in range(0, int(sys.argv[3])):
 					if(arrow[1] in lines[j]):
 						indicies.append(j)
 				
-		#randop = random.randint(0,1)
-		randop = 0
+		randop = random.randint(0,1)
 
 		#insert xnor
 		if(randop == 1):
@@ -63,8 +62,7 @@ for i in range(0, int(sys.argv[3])):
 			op = "xor"
 			value = 0
 
-		#randinv = random.randint(0,1)
-		randinv = 0
+		randinv = random.randint(0,1)
 
 		newgateStr = gateStr + str(i+1)
 		invStr = newgateStr + "inv"
@@ -104,11 +102,11 @@ for i in range(0, int(sys.argv[3])):
 			if(nodes[i] in lines[j]):
 				index = lines[j].index(nodes[i])
 				#not an output
+#				print(lines[j][index+len(nodes[i])])
 				if(index > 0 and (lines[j][index+len(nodes[i])] == "," or lines[j][index+len(nodes[i])] == ")")):
 					indicies.append(j)
 					
-		# randop = random.randint(0,1)
-		randop = 0;
+		randop = random.randint(0,1)
 
 		#insert xnor
 		if(randop == 1):
@@ -118,9 +116,7 @@ for i in range(0, int(sys.argv[3])):
 			op = "xor"
 			value = 0
 
-		# randinv = random.randint(0,1)
-		randinv = 0
-
+		randinv = random.randint(0,1)
 
 		newgateStr = gateStr + str(i+1)
 
