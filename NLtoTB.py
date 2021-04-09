@@ -91,11 +91,11 @@ print("  process")
 print("  begin")
 if(key == True):
 	if(keylen > 10):
-		print("    -- Run simulation for a total of 110 ns")
+		print("    -- Run simulation for a total of " + str(10 + (keylen/2) * 10) + " ns")
 		print("      -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("      Tkey <= \"" + keysig + "\";")
 		print("      wait for 10 ns;")
-		for i in range(0,10):
+		for i in range(0,keylen // 2):
 			print("        -- With Incorrect Key " + str(i+1) + " which has " + str(i+1) + " bits changed")
 			randnum = random.randint(0,keylen-1)
 			while(randnum in indexChange):
