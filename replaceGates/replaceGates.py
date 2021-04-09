@@ -68,12 +68,14 @@ for i in range(0, int(sys.argv[3])):
 		invStr = newgateStr + "inv"
 
 		for k in range(0, len(indicies)):
-			temp = lines[indicies[k]].split(arrow[0])
+			curindex = lines[j].index(arrow[0])
+			while(lines[j][curindex+len(arrow[0])] != "," or lines[j][curindex+len(arrow[0])] != ")"):
+				curindex = lines[j].index(arrow[0], curindex)
 
 			if(randinv == 0):
-				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
+				lines[indicies[k]] = lines[indicies[k]][0:curindex] + newgateStr + lines[indicies[k]][curindex+len(arrow[0]):len(lines[indicies[k]])]
 			else:		
-				lines[indicies[k]] = temp[0] + invStr + temp[1]
+				lines[indicies[k]] = lines[indicies[k]][0:curindex] + invStr + lines[indicies[k]][curindex+len(arrow[0]):len(lines[indicies[k]])]
 
 		#do not add inverter
 		if(randinv == 0):
@@ -102,7 +104,8 @@ for i in range(0, int(sys.argv[3])):
 			if(nodes[i] in lines[j]):
 				index = lines[j].index(nodes[i])
 				#not an output
-#				print(lines[j][index+len(nodes[i])])
+				print(lines[j])
+				print(lines[j][index+len(nodes[i])])
 				if(index > 0 and (lines[j][index+len(nodes[i])] == "," or lines[j][index+len(nodes[i])] == ")")):
 					indicies.append(j)
 					
@@ -122,17 +125,27 @@ for i in range(0, int(sys.argv[3])):
 
 		invStr = newgateStr + "inv"
 		for k in range(0, len(indicies)):
-			temp = lines[indicies[k]].split(nodes[i])
+			print(lines[indicies[k]])
+			print(nodes[i])
+			curindex = lines[indicies[k]].index(nodes[i])
+			print(lines[indicies[k]][curindex+len(nodes[i])])
+			while(lines[indicies[k]][curindex+len(nodes[i])] != "," or lines[indicies[k]][curindex+len(nodes[i])] != ")"):
+				curindex = lines[indicies[k]].index(nodes[i], curindex)
+			#insert fix here
+			#temp = lines[indicies[k]].split(nodes[i])
 
 			if(randinv == 0):
-				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
+				lines[indicies[k]] = lines[indicies[k]][0:curindex] + newgateStr + lines[indicies[k]][curindex+len(arrow[0]):len(lines[indicies[k]])]
+				#lines[indicies[k]] = temp[0] + newgateStr + temp[1]
 			else:		
-				lines[indicies[k]] = temp[0] + invStr + temp[1]
+				lines[indicies[k]] = lines[indicies[k]][0:curindex] + invStr + lines[indicies[k]][curindex+len(arrow[0]):len(lines[indicies[k]])]
+				#lines[indicies[k]] = temp[0] + invStr + temp[1]
 
 		#node is output
 		if(len(indicies) == 0):
 			for l in range(curline, lineLen):
 				if(nodes[i] in lines[l]):
+					#insert fix here
 					temp = lines[l].split(nodes[i])
 					lines[l] = tempStr + str(i) + temp[1]	
 					if(randinv == 0):
