@@ -16,7 +16,7 @@ begin
   process
   begin
     -- Run simulation for a total of 40 ns
-    With Correct Key -- seen in c17EncNetlist.vhd
+    -- With Correct Key -- seen in c17EncNetlist.vhd
       Tkey <= "00";
       wait for 10 ns;
       Tkey <= "01";

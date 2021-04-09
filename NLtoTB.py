@@ -92,10 +92,11 @@ print("  begin")
 if(key == True):
 	if(keylen > 10):
 		print("    -- Run simulation for a total of 110 ns")
-		print("    With Correct Key -- seen in " + title[1] + ".vhd")
+		print("      -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("      Tkey <= \"" + keysig + "\";")
 		print("      wait for 10 ns;")
-		for i in range(0,10):
+		for i in range(0,11):
+			print("        -- With Incorrect Key " + str(i) + " which has " + str(i) + " bits changed")
 			randnum = random.randint(0,keylen-1)
 			while(randnum in indexChange):
 				randnum = random.randint(0,keylen-1)
@@ -111,7 +112,7 @@ if(key == True):
 	
 	else:
 		print("    -- Run simulation for a total of 40 ns")
-		print("    With Correct Key -- seen in " + title[1] + ".vhd")
+		print("    -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("      Tkey <= \"00\";")
 		print("      wait for 10 ns;")
 		print("      Tkey <= \"01\";")
