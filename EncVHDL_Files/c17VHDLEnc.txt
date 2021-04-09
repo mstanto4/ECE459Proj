@@ -8,14 +8,14 @@ entity c17EncNetlist is
     G3gat : in std_logic := '0';
     G6gat : in std_logic := '0';
     G7gat : in std_logic := '0';
-    key: in std_logic_vector(1 downto 0) := "10";
+    key: in std_logic_vector(1 downto 0) := "00";
     G22gat : out std_logic;
     G23gat : out std_logic
   );
 end c17EncNetlist;
 
 architecture behavioral of c17EncNetlist is
-  signal G10gat, G11gat, G16gat, G19gat, temp1, gate1, gate2, gate2inv: std_logic;
+  signal G10gat, G11gat, G16gat, G19gat, temp1, gate1, gate2: std_logic;
 begin
   G10gat <= G1gat nand  G3gat;
   G11gat <= G3gat nand  G6gat;
@@ -24,7 +24,6 @@ begin
   temp1 <= G10gat nand  gate1;
   G23gat <= gate1 nand  G19gat;
   gate1 <= G16gat xor  key(0);
-  G22gat <= gate2inv;
-  gate2 <= temp1 xnor  key(1);
-  gate2inv <= not gate2;
+  G22gat <= gate2;
+  gate2 <= temp1 xor  key(1);
 end behavioral;

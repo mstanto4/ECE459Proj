@@ -31,7 +31,6 @@ G19gat = nand(G11gat, G7gat)
 temp1 = nand(G10gat, gate1)
 G23gat = nand(gate1, G19gat)
 gate1 = xor(G16gat, key(0))
-G22gat = buf(gate2inv)
-gate2 = xnor(temp1, key(1))
-gate2inv = not(gate2)
-# 10
+G22gat = buf(gate2)
+gate2 = xor(temp1, key(1))
+# 00

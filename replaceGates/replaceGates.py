@@ -128,8 +128,6 @@ for i in range(0, int(sys.argv[3])):
 		for k in range(0, len(indicies)):
 			temp = lines[indicies[k]].split(nodes[i])
 
-			print("temp is", temp)
-
 			if(randinv == 0):
 				lines[indicies[k]] = temp[0] + newgateStr + temp[1]
 			else:		
@@ -177,8 +175,8 @@ for line in lines:
 	print(line)
 #
 # TEST
-# keyStr = "# "
-# for bit in key:
-# 	keyStr = keyStr + str(bit)
-# print(keyStr)
+keyStr = "# "
+for bit in key:
+	keyStr = keyStr + str(bit)
+print(keyStr)
 	
