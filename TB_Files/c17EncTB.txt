@@ -5,15 +5,25 @@ entity c17EncNetlist_tb is
 -- Port ();
 end c17EncNetlist_tb;
 
-architecture behavioral of c17EncNetlist is
-  signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat, TG22gat, TG23gat: std_logic;
-  signal Tkey: std_logic_vector(1 downto 0) := "10";
+architecture behavioral of c17EncNetlist_tb is
+  signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat: std_logic := '0';
+  signal Tout: std_logic_vector(1 downto 0);
+  signal Tkey: std_logic_vector(1 downto 0) := "00";
 begin
   L1: entity work.c17EncNetlist(behavioral)
-  port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G7gat=> TG7gat, G22gat=> TG22gat, key => Tkey, G23gat=> TG23gat);
+  port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G22gat=> Tout(0), G23gat=> Tout(1), key => Tkey, G7gat=> TG7gat);
+
   process
   begin
-
-
+    -- Run simulation for a total of 40 ns
+    With Correct Key -- seen in c17EncNetlist.vhd
+      Tkey <= "00";
+      wait for 10 ns;
+      Tkey <= "01";
+      wait for 10 ns;
+      Tkey <= "10";
+      wait for 10 ns;
+      Tkey <= "11";
+      wait for 10 ns;
   end process;
 end behavioral;

@@ -1,8 +1,10 @@
 import numpy as np
 import sys
+import random
 
 signals = []
 outputs = []
+indexChange = []
 
 netlist = open(sys.argv[1], "r")
 lines = netlist.readlines()
@@ -45,7 +47,7 @@ print("entity " + title[1] + "_tb is")
 print("-- Port ();")
 print("end " + title[1] + "_tb;\n")
 
-print("architecture behavioral of " + title[1] + " is")
+print("architecture behavioral of " + title[1] + "_tb is")
 
 
 signal = "  signal "
@@ -54,7 +56,7 @@ for i in range(0, len(signals) - 1):
 		signal = signal + "\n  "
 	signal = signal + "T" + signals[i] + ", "
 		
-signal = signal + "T" + signals[len(signals) - 1] + ": std_logic;"
+signal = signal + "T" + signals[len(signals) - 1] + ": std_logic := '0';"
 print(signal)
 
 #print output signal
@@ -90,7 +92,23 @@ print("  begin")
 if(key == True):
 	if(keylen > 10):
 		print("    -- Run simulation for a total of 110 ns")
+		print("    With Correct Key -- seen in " + title[1] + ".vhd")
+		print("      Tkey <= \"" + keysig + "\";")
+		print("      wait for 10 ns;")
+		for i in range(0,10):
+			randnum = random.randint(0,keylen-1)
+			while(randnum in indexChange):
+				randnum = random.randint(0,keylen-1)
+			indexChange.append(randnum)
+			if(keysig[randnum] == '0'):
+				keysig = keysig[0:randnum] + "1" + keysig[randnum+1:len(keysig)]
 
+			else:
+				keysig = keysig[0:randnum] + "0" + keysig[randnum:len(keysig)]
+
+			print("      Tkey <= \"" + keysig + "\";")
+			print("      wait for 10 ns;")
+	
 	else:
 		print("    -- Run simulation for a total of 40 ns")
 		print("    With Correct Key -- seen in " + title[1] + ".vhd")
