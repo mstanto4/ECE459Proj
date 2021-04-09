@@ -5,7 +5,7 @@ entity c17Netlist_tb is
 -- Port ();
 end c17Netlist_tb;
 
-architecture behavioral of c17Netlist is
+architecture behavioral of c17Netlist_tb is
   signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat: std_logic;
   signal Tout: std_logic_vector(1 downto 0);
 begin

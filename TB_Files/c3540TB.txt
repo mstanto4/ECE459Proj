@@ -5,7 +5,7 @@ entity c3540Netlist_tb is
 -- Port ();
 end c3540Netlist_tb;
 
-architecture behavioral of c3540Netlist is
+architecture behavioral of c3540Netlist_tb is
   signal TG1, TG13, TG20, TG33, TG41, TG45, TG50, TG58, TG68, TG77, 
   TG87, TG97, TG107, TG116, TG124, TG125, TG128, TG132, TG137, TG143, 
   TG150, TG159, TG169, TG179, TG190, TG200, TG213, TG222, TG223, TG226, 
