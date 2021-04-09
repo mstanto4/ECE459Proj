@@ -48,7 +48,7 @@ for i in range(0, int(sys.argv[3])):
 				index = lines[j].index(arrow[0])
 
 				#not an output
-				if(index > 0):
+				if(index > 0 and (lines[j][index+len(arrow[0])] == "," or lines[j][index+len(arrow[0])] == ")")):
 					if(arrow[1] in lines[j]):
 						indicies.append(j)
 				
@@ -83,14 +83,14 @@ for i in range(0, int(sys.argv[3])):
 			insertVal = newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))"
 
 			#TEST
-			print("insert val is", insertVal)
+			#print("insert val is", insertVal)
 
 			lines.append(insertVal)
 		#add inverter
 		else:
 
 			#TEST
-			print("invertor?")
+			#print("invertor?")
 
 			if(value == 1):
 				key.insert(0,0)
@@ -104,7 +104,7 @@ for i in range(0, int(sys.argv[3])):
 			if(nodes[i] in lines[j]):
 				index = lines[j].index(nodes[i])
 				#not an output
-				if(index > 0):
+				if(index > 0 and (lines[j][index+len(nodes[i])] == "," or lines[j][index+len(nodes[i])] == ")")):
 					indicies.append(j)
 					
 		# randop = random.randint(0,1)
@@ -113,8 +113,10 @@ for i in range(0, int(sys.argv[3])):
 		#insert xnor
 		if(randop == 1):
 			op = "xnor"
+			value = 1
 		else:
 			op = "xor"
+			value = 0
 
 		# randinv = random.randint(0,1)
 		randinv = 0
@@ -145,10 +147,14 @@ for i in range(0, int(sys.argv[3])):
 						lines.append(nodes[i] + " = buf(" + invStr + ")")
 			#do not add inverter
 			if(randinv == 0):
-				key.insert(0,0)	
+				key.insert(0,value)	
 				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
 			#add inverter
 			else:
+				if(value == 1):
+					key.insert(0,0)
+				else:
+					key.insert(0,1)
 				key.insert(0,1)
 				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
 				lines.append(invStr + " = not(" + newgateStr + ")")
@@ -156,17 +162,19 @@ for i in range(0, int(sys.argv[3])):
 		else:
 			#do not add inverter
 			if(randinv == 0):
-				key.insert(0,0)	
+				key.insert(0,value)	
 				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
 			#add inverter
 			else:
-				key.insert(0,1)
+				if(value == 1):
+					key.insert(0,0)
+				else:
+					key.insert(0,1)
 				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
 				lines.append(invStr + " = not(" + newgateStr + ")")
 
-# TEST
-# for line in lines:
-# 	print(line)
+for line in lines:
+	print(line)
 #
 # TEST
 # keyStr = "# "
