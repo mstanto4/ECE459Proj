@@ -10,7 +10,7 @@ architecture behavioral of c3540Netlist_tb is
   TG87, TG97, TG107, TG116, TG124, TG125, TG128, TG132, TG137, TG143, 
   TG150, TG159, TG169, TG179, TG190, TG200, TG213, TG222, TG223, TG226, 
   TG232, TG238, TG244, TG250, TG257, TG264, TG270, TG274, TG283, TG294, 
-  TG303, TG311, TG317, TG322, TG326, TG329, TG330, TG343, TG1698, TG2897: std_logic;
+  TG303, TG311, TG317, TG322, TG326, TG329, TG330, TG343, TG1698, TG2897: std_logic := '0';
   signal Tout: std_logic_vector(21 downto 0);
 begin
   L1: entity work.c3540Netlist(behavioral)

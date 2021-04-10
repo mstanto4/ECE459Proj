@@ -9,7 +9,7 @@ architecture behavioral of c1908Netlist_tb is
   signal TG101, TG104, TG107, TG110, TG113, TG116, TG119, TG122, TG125, TG128, 
   TG131, TG134, TG137, TG140, TG143, TG146, TG210, TG214, TG217, TG221, 
   TG224, TG227, TG234, TG237, TG469, TG472, TG475, TG478, TG898, TG900, 
-  TG902, TG952, TG953: std_logic;
+  TG902, TG952, TG953: std_logic := '0';
   signal Tout: std_logic_vector(24 downto 0);
 begin
   L1: entity work.c1908Netlist(behavioral)
