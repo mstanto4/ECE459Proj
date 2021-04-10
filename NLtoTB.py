@@ -105,8 +105,8 @@ if(key == True):
 				keysig = keysig[0:randnum] + "1" + keysig[randnum+1:len(keysig)]
 
 			else:
-				keysig = keysig[0:randnum] + "0" + keysig[randnum:len(keysig)]
-
+				keysig = keysig[0:randnum] + "0" + keysig[randnum+1:len(keysig)]
+			
 			print("      Tkey <= \"" + keysig + "\";")
 			print("      wait for 10 ns;")
 	
