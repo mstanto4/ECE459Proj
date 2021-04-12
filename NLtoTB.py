@@ -127,8 +127,8 @@ if(key == True):
 			else:
 				keysig = keysig[0:randnum] + "0" + keysig[randnum+1:len(keysig)]
 			
-			print("      Tkey <= \"" + keysig + "\";")
-			print("      wait for 8 ns;")
+			print("    Tkey <= \"" + keysig + "\";")
+			print("    wait for 8 ns;")
 			print("    Toutput := to_bitvector(Tout);  -- save output to variable")
 			print("    write(outLine, Tkey);  -- write Tkey to output line")
 			print("    writeline(result, outLine);  -- write output line to output file")
