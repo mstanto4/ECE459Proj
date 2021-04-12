@@ -1,5 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+use IEEE.std_logic_textio.all;
+
+library std;
+use std.textio.all;
 
 entity c17EncNetlist_tb is
 -- Port ();
@@ -7,26 +12,65 @@ end c17EncNetlist_tb;
 
 architecture behavioral of c17EncNetlist_tb is
   signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat: std_logic := '0';
-  signal Tout: std_logic_vector(1 downto 0);
   signal Tkey: std_logic_vector(1 downto 0) := "00";
+  signal Tout: std_logic_vector(1 downto 0);
 begin
   L1: entity work.c17EncNetlist(behavioral)
   port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G22gat=> Tout(0), G23gat=> Tout(1), key => Tkey, G7gat=> TG7gat);
 
   process
+    file result: text is out "c17EncNetlist.txt"; -- file pointer to output results file
+    variable outLine: line; -- variable to store contents of line to/from files
+    variable Toutput: bit_vector(1 downto 0); -- variable for data transfer to/from files
   begin
+    -- print out description
+    write(outLine, string'("c17 Original Output"));  -- write Toutput to output line
+    writeline(result, outLine);  -- write output line to output file
+
     -- Run simulation for a total of 40 ns
-      -- With Correct Key -- seen in c17EncNetlist.vhd
-      Tkey <= "00";
-      wait for 10 ns;
-      --With Incorrect Key 1
-      Tkey <= "01";
-      wait for 10 ns;
-      --With Incorrect Key 2
-      Tkey <= "10";
-      wait for 10 ns;
-      --With Incorrect Key 3
-      Tkey <= "11";
-      wait for 10 ns;
+    -- With Correct Key -- seen in c17EncNetlist.vhd
+    Tkey <= "00";
+    wait for 8 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Tkey);  -- write Tkey to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+
+    --With Incorrect Key 1
+    Tkey <= "01";
+    wait for 8 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Tkey);  -- write Tkey to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+
+    --With Incorrect Key 2
+    Tkey <= "10";
+    wait for 8 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Tkey);  -- write Tkey to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+
+    --With Incorrect Key 3
+    Tkey <= "11";
+    wait for 8 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Tkey);  -- write Tkey to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait 1 ns;
+
   end process;
 end behavioral;

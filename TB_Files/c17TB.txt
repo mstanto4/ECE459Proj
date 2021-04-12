@@ -1,5 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+use IEEE.std_logic_textio.all;
+
+library std;
+use std.textio.all;
 
 entity c17Netlist_tb is
 -- Port ();
@@ -13,8 +18,18 @@ begin
   port map(G1gat=> TG1gat, G2gat=> TG2gat, G3gat=> TG3gat, G6gat=> TG6gat, G22gat=> Tout(0), G23gat=> Tout(1), G7gat=> TG7gat);
 
   process
+    file result: text is out "c17Netlist.txt"; -- file pointer to output results file
+    variable outLine: line; -- variable to store contents of line to/from files
+    variable Toutput: bit_vector(1 downto 0); -- variable for data transfer to/from files
   begin
-  -- Run simulation for a total of 10 ns
+    -- print out description
+    write(outLine, string'("c17 Original Output"));  -- write Toutput to output line
+    writeline(result, outLine);  -- write output line to output file
+    -- Run simulation for a total of 10 ns
     wait for 10 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait;
   end process;
 end behavioral;
