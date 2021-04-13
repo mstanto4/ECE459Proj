@@ -128,7 +128,7 @@ signal = "  signal "
 for i in range(0, len(outputs) - 1):
 	if(i % 10 == 0 and i != 0):
 		signal = signal + "\n"
-	signal = signal + inputs[i] + ", "
+	signal = signal + outputs[i] + ", "
 		
 signal = signal + outputs[len(outputs) - 1] + ": std_logic;"
 print(signal)

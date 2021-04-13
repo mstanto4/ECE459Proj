@@ -100,9 +100,9 @@ G1217, G375, G1221, G376, G55: std_logic := '0';
 G131, G134, G137, G140, G143, G146, G210, G214, G217, G221, 
 G224, G227, G234, G237, G469, G472, G475, G478, G898, G900, 
 G902, G952, G953: std_logic;
-  signal G101, G104, G107, G110, G113, G116, G119, G122, G125, G128, 
-G131, G134, G137, G140, G143, G146, G210, G214, G217, G221, 
-G224, G227, G234, G237, G57: std_logic;
+  signal G3, G6, G9, G12, G30, G45, G48, G15, G18, G21, 
+G24, G27, G33, G36, G39, G42, G75, G51, G54, G60, 
+G63, G66, G69, G72, G57: std_logic;
   signal output: std_logic_vector(24 downto 0);
 begin
   G149 <= not G101;

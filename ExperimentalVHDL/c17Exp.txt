@@ -12,7 +12,7 @@ end c17Netlist;
 architecture behavioral of c17Netlist is
   signal G10gat, G11gat, G16gat, G19gat: std_logic := '0';
   signal G1gat, G2gat, G3gat, G6gat, G7gat: std_logic;
-  signal G1gat, G23gat: std_logic;
+  signal G22gat, G23gat: std_logic;
   signal output: std_logic_vector(1 downto 0);
 begin
   G10gat <= G1gat nand  G3gat;
