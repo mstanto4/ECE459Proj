@@ -21,6 +21,6 @@ begin
   G19gat <= G11gat nand  G7gat;
   G22gat <= G10gat nand  G16gat;
   G23gat <= G16gat nand  G19gat;
-output(0) <= G22gat;
-output(1) <= G23gat;
+  output(0) <= G22gat;
+  output(1) <= G23gat;
 end behavioral;

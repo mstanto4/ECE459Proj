@@ -142,7 +142,7 @@ for i in range(0, len(code)):
 	print("  " + code[i])
 
 for i in range(0, len(outputs)):
-	print("output(" + str(i)+") <= " + outputs[i] + ";")
+	print("  output(" + str(i)+") <= " + outputs[i] + ";")
 
 print("end behavioral;")
 
