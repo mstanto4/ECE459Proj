@@ -96,11 +96,10 @@ print("entity " + title[1] + " is")
 
 print("  port (")
 
-#print outputs
-for i in range(0, len(outputs) - 1):
-	print("    " + outputs[i] + " : out std_logic;")
+print("    clock: in std_logic;")
+print("    Anodes: out std_logic_vector(3 downto 0);")
+print("    seg: out std_logic_vector(6 downto 0)")
 
-print("    " + outputs[len(outputs) - 1] + " : out std_logic")
 print("  );")
 print("end " + title[1] + ";\n")
 
@@ -124,11 +123,26 @@ for i in range(0, len(inputs) - 1):
 		
 signal = signal + inputs[len(inputs) - 1] + ": std_logic;"
 print(signal)
+
+signal = "  signal "
+for i in range(0, len(outputs) - 1):
+	if(i % 10 == 0 and i != 0):
+		signal = signal + "\n"
+	signal = signal + inputs[i] + ", "
+		
+signal = signal + outputs[len(outputs) - 1] + ": std_logic;"
+print(signal)
+
+print("  signal output: std_logic_vector(" + str(len(outputs) - 1) + " downto 0);")
+
 print("begin")
 
 #print converted code
 for i in range(0, len(code)):
 	print("  " + code[i])
+
+for i in range(0, len(outputs)):
+	print("output(" + str(i)+") <= " + outputs[i] + ";")
 
 print("end behavioral;")
 

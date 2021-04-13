@@ -3,28 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity c3540Netlist is
   port (
-    G353 : out std_logic;
-    G355 : out std_logic;
-    G361 : out std_logic;
-    G358 : out std_logic;
-    G351 : out std_logic;
-    G372 : out std_logic;
-    G369 : out std_logic;
-    G399 : out std_logic;
-    G364 : out std_logic;
-    G396 : out std_logic;
-    G384 : out std_logic;
-    G367 : out std_logic;
-    G387 : out std_logic;
-    G393 : out std_logic;
-    G390 : out std_logic;
-    G378 : out std_logic;
-    G375 : out std_logic;
-    G381 : out std_logic;
-    G407 : out std_logic;
-    G409 : out std_logic;
-    G405 : out std_logic;
-    G402 : out std_logic
+    clock: in std_logic;
+    Anodes: out std_logic_vector(3 downto 0);
+    seg: out std_logic_vector(6 downto 0)
   );
 end c3540Netlist;
 
@@ -199,6 +180,10 @@ G87, G97, G107, G116, G124, G125, G128, G132, G137, G143,
 G150, G159, G169, G179, G190, G200, G213, G222, G223, G226, 
 G232, G238, G244, G250, G257, G264, G270, G274, G283, G294, 
 G303, G311, G317, G322, G326, G329, G330, G343, G1698, G2897: std_logic;
+  signal G1, G13, G20, G33, G41, G45, G50, G58, G68, G77, 
+G87, G97, G107, G116, G124, G125, G128, G132, G137, G143, 
+G150, G402: std_logic;
+  signal output: std_logic_vector(21 downto 0);
 begin
   G432 <= G50;
   G442 <= not G50;
@@ -1869,4 +1854,26 @@ begin
   G401 <= G2859 nand  G2860;
   G405 <= G403 and  G404;
   G402 <= G400 nand  G401;
+output(0) <= G353;
+output(1) <= G355;
+output(2) <= G361;
+output(3) <= G358;
+output(4) <= G351;
+output(5) <= G372;
+output(6) <= G369;
+output(7) <= G399;
+output(8) <= G364;
+output(9) <= G396;
+output(10) <= G384;
+output(11) <= G367;
+output(12) <= G387;
+output(13) <= G393;
+output(14) <= G390;
+output(15) <= G378;
+output(16) <= G375;
+output(17) <= G381;
+output(18) <= G407;
+output(19) <= G409;
+output(20) <= G405;
+output(21) <= G402;
 end behavioral;
