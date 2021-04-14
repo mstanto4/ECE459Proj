@@ -34,10 +34,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 1
     Tkey <= "01";
@@ -45,10 +45,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 2
     Tkey <= "10";
@@ -56,10 +56,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 3
     Tkey <= "11";
@@ -67,10 +67,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
   end process;
 end behavioral;
