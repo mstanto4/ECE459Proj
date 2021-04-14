@@ -115,7 +115,11 @@ if(key == True):
 		print("    write(outLine, Touput);  -- write Touput to output line")
 		print("    writeline(result, outLine);  -- write output line to output file")
 		print("    wait 1 ns;\n")
-		for i in range(0,keylen // 2):
+
+		#####
+		#Change range of this array if you want to test less keys (not more! (would have issues))
+		#####
+		for i in range(0,keylen):
 			print("        -- With Incorrect Key " + str(i+1) + " which has " + str(i+1) + " bits changed")
 			randnum = random.randint(0,keylen-1)
 			while(randnum in indexChange):
