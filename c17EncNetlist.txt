@@ -1,0 +1,10 @@
+c17EncNetlist Original Output
+101
+00
+001
+10
+011
+11
+010
+00
+c17EncNetlist Original Output
