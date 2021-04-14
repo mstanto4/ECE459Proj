@@ -24,12 +24,12 @@ begin
     variable Toutput: bit_vector(1 downto 0); -- variable for data transfer to/from files
   begin
     -- print out description
-    write(outLine, string'("c17 Original Output"));  -- write Toutput to output line
+    write(outLine, string'("c17EncNetlist Original Output"));  -- write Toutput to output line
     writeline(result, outLine);  -- write output line to output file
 
     -- Run simulation for a total of 40 ns
     -- With Correct Key -- seen in c17EncNetlist.vhd
-    Tkey <= "00";
+    Tkey <= "101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -39,8 +39,8 @@ begin
     writeline(result, outLine);  -- write output line to output file
     wait for 1 ns;
 
-    --With Incorrect Key 1
-    Tkey <= "01";
+        -- With Incorrect Key 1 which has 1 bits changed
+    Tkey <= "001";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -50,8 +50,8 @@ begin
     writeline(result, outLine);  -- write output line to output file
     wait for 1 ns;
 
-    --With Incorrect Key 2
-    Tkey <= "10";
+        -- With Incorrect Key 2 which has 2 bits changed
+    Tkey <= "011";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -61,8 +61,8 @@ begin
     writeline(result, outLine);  -- write output line to output file
     wait for 1 ns;
 
-    --With Incorrect Key 3
-    Tkey <= "11";
+        -- With Incorrect Key 3 which has 3 bits changed
+    Tkey <= "010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
