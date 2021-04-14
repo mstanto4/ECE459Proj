@@ -1,5 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+use IEEE.std_logic_textio.all;
+
+library std;
+use std.textio.all;
 
 entity c1908Netlist_tb is
 -- Port ();
@@ -21,8 +26,18 @@ begin
   G63=> Tout(20), G66=> Tout(21), G69=> Tout(22), G72=> Tout(23), G57=> Tout(24), G953=> TG953);
 
   process
+    file result: text is out "c1908Netlist.txt"; -- file pointer to output results file
+    variable outLine: line; -- variable to store contents of line to/from files
+    variable Toutput: bit_vector(24 downto 0); -- variable for data transfer to/from files
   begin
-  -- Run simulation for a total of 10 ns
+    -- print out description
+    write(outLine, string'("c1908Netlist Original Output"));  -- write Toutput to output line
+    writeline(result, outLine);  -- write output line to output file
+    -- Run simulation for a total of 10 ns
     wait for 10 ns;
+    Toutput := to_bitvector(Tout);  -- save output to variable
+    write(outLine, Touput);  -- write Touput to output line
+    writeline(result, outLine);  -- write output line to output file
+    wait;
   end process;
 end behavioral;

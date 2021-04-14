@@ -12,7 +12,7 @@ end c17EncNetlist_tb;
 
 architecture behavioral of c17EncNetlist_tb is
   signal TG1gat, TG2gat, TG3gat, TG6gat, TG7gat: std_logic := '0';
-  signal Tkey: std_logic_vector(3 downto 0) := "1100";
+  signal Tkey: std_logic_vector(1 downto 0) := "00";
   signal Tout: std_logic_vector(1 downto 0);
 begin
   L1: entity work.c17EncNetlist(behavioral)
@@ -34,10 +34,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 1
     Tkey <= "01";
@@ -45,10 +45,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 2
     Tkey <= "10";
@@ -56,10 +56,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
     --With Incorrect Key 3
     Tkey <= "11";
@@ -67,10 +67,10 @@ begin
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
+    wait 1 ns;
+    write(outLine, Touput);  -- write Touput to output line
     writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
+    wait 1 ns;
 
   end process;
 end behavioral;
