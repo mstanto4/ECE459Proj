@@ -157,7 +157,6 @@ for i in range(0, int(sys.argv[3])):
 					key.insert(0,0)
 				else:
 					key.insert(0,1)
-				key.insert(0,1)
 				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
 				lines.append(invStr + " = not(" + newgateStr + ")")
 		
@@ -183,4 +182,5 @@ keyStr = "# "
 for bit in key:
 	keyStr = keyStr + str(bit)
 print(keyStr)
+print("# " + str(len(keyStr) - 2))
 	
