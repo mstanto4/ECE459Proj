@@ -182,5 +182,4 @@ keyStr = "# "
 for bit in key:
 	keyStr = keyStr + str(bit)
 print(keyStr)
-print("# " + str(len(keyStr) - 2))
 	
