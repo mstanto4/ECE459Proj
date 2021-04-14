@@ -101,10 +101,13 @@ print("  begin")
 if(key == True):
 	if(keylen > 10):
 		print("    -- print out description")
-		print("    write(outLine, string'(\"c17 Original Output\"));  -- write Toutput to output line")
+		print("    write(outLine, string'(\"" + title[1]  + " Original Output\"));  -- write Toutput to output line")
 		print("    writeline(result, outLine);  -- write output line to output file\n")
 		
-		print("    -- Run simulation for a total of " + str(10 + (keylen/2) * 10) + " ns")
+		####
+		# Change runtime comment for time if you change number of keys tested
+		####
+		print("    -- Run simulation for a total of " + str(10 + (keylen) * 10) + " ns")
 		print("    -- With Correct Key -- seen in " + title[1] + ".vhd")
 		print("    Tkey <= \"" + keysig + "\";")
 		print("    wait for 8 ns;")
