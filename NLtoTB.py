@@ -195,7 +195,7 @@ if(key == True):
 		print("    wait 1 ns;\n")
 else:
 	print("    -- print out description")
-	print("    write(outLine, string'(\"c17 Original Output\"));  -- write Toutput to output line")
+	print("    write(outLine, string'(\"" + title[1]  + " Original Output\"));  -- write Toutput to output line")
 	print("    writeline(result, outLine);  -- write output line to output file")
 	print("    -- Run simulation for a total of 10 ns")
 	print("    wait for 10 ns;")	

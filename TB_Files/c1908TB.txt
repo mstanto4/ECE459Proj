@@ -31,7 +31,7 @@ begin
     variable Toutput: bit_vector(24 downto 0); -- variable for data transfer to/from files
   begin
     -- print out description
-    write(outLine, string'("c17 Original Output"));  -- write Toutput to output line
+    write(outLine, string'("c1908Netlist Original Output"));  -- write Toutput to output line
     writeline(result, outLine);  -- write output line to output file
     -- Run simulation for a total of 10 ns
     wait for 10 ns;
