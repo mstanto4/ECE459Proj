@@ -36,7 +36,7 @@ entity c1908EncNetlist is
     G902 : in std_logic := '0';
     G952 : in std_logic := '0';
     G953 : in std_logic := '0';
-    key: in std_logic_vector(74 downto 0) := "111100110100110010101000110100010001011111110100001001010010111100110011010";
+    key: in std_logic_vector(74 downto 0) := "110001111010011011010000101101100000101010111001010001001101010110001011101";
     G3 : out std_logic;
     G6 : out std_logic;
     G9 : out std_logic;
@@ -66,119 +66,120 @@ entity c1908EncNetlist is
 end c1908EncNetlist;
 
 architecture behavioral of c1908EncNetlist is
-  signal G149, G153, G156, G160, G165, G168, G171, G175, G179, G184, 
-G188, G191, G194, G198, G202, G206, G231, G233, G241, G244, 
-G245, G248, G517, G529, G541, G553, G859, G862, G907, G909, 
-G911, G918, G919, G922, G926, G930, G932, G934, G938, G943, 
-G947, G949, G1506, G1514, G1522, G1530, G1538, G1546, G1554, G1562, 
-G1570, G1578, G1586, G1594, G1602, G1610, G1618, G1626, G1512, G1520, 
-G1528, G1536, G1544, G1552, G1560, G1568, G1576, G1584, G1592, G1600, 
-G1608, G1616, G1624, G1632, G50, G52, G56, G58, G62, G64, 
-G251, G254, G288, G291, G299, G302, G318, G321, G327, G330, 
-G352, G355, G369, G382, G385, G853, G856, G893, G954, G955, 
-G1050, G1053, G1176, G1179, G1197, G1207, G1222, G1244, G1278, G1290, 
-G1300, G1312, G1332, G1335, G1442, G1450, G1458, G1466, G1474, G1482, 
-G1490, G1498, G1634, G1644, G1657, G1665, G1697, G1705, G1713, G1721, 
-G1745, G1753, G1785, G1793, G1814, G1817, G1830, G1833, G1841, G1849, 
-G1854, G1857, G1870, G1873, G1878, G1881, G1642, G1652, G1056, G1057, 
-G1182, G1183, G1211, G1298, G1320, G1338, G1339, G457, G459, G482, 
-G487, G492, G505, G1456, G1448, G1472, G1464, G1488, G1480, G1504, 
-G1496, G956, G967, G978, G979, G980, G1661, G990, G1669, G1030, 
-G1701, G1040, G1709, G1058, G1717, G1068, G1725, G1078, G1090, G1100, 
-G1749, G1112, G1757, G1154, G1789, G1166, G1797, G1194, G1201, G1204, 
-G1820, G1821, G1230, G1836, G1837, G1252, G1256, G1845, G1268, G1853, 
-G1860, G1861, G1286, G1876, G1877, G1308, G1884, G1885, G1654, G1662, 
-G1694, G1702, G1710, G1718, G1726, G1734, G1742, G1750, G1782, G1790, 
-G1838, G1846, G297, G298, G361, G362, G404, G405, G1225, G1226, 
-G1247, G1248, G1281, G1282, G1303, G1304, G1315, G1316, G998, G988, 
-G268, G1038, G1048, G1076, G1066, G1098, G1120, G1174, G363, G1210, 
-G373, G1276, G406, G565, G566, G614, G615, G958, G969, G1660, 
-G984, G1668, G994, G1700, G1034, G1708, G1044, G1716, G1062, G1724, 
-G1072, G1732, G1086, G1740, G1748, G1104, G1108, G1756, G1116, G1788, 
-G1158, G1162, G1796, G1170, G1200, G1203, G1227, G1249, G1844, G1260, 
-G1264, G1852, G1272, G1283, G1305, G1317, G1410, G1418, G1426, G1434, 
-G269, G372, G983, G993, G1033, G1043, G1061, G1071, G1103, G1115, 
-G1157, G1169, G1184, G1202, G1259, G1271, G1322, G374, G396, G1321, 
-G1424, G1416, G1440, G1432, G985, G995, G1035, G1045, G1063, G1073, 
-G1105, G1117, G1159, G1171, G1212, G1231, G1232, G1253, G1254, G1261, 
-G1273, G1287, G1288, G1309, G1310, G1192, G397, G1330, G1000, G1010, 
-G1233, G1255, G1289, G1311, G1381, G257, G999, G260, G989, G272, 
-G1039, G294, G1049, G305, G1077, G308, G1067, G333, G1121, G358, 
-G1175, G1220, G388, G1277, G398, G1109, G1110, G1163, G1164, G1234, 
-G1265, G1266, G1822, G1862, G1865, G258, G261, G273, G1018, G1008, 
-G295, G306, G309, G334, G359, G389, G1385, G1111, G1165, G1267, 
-G1886, G259, G262, G274, G296, G307, G310, G335, G360, G1242, 
-G390, G1828, G1868, G1869, G1373, G1798, G1825, G265, G314, G336, 
-G407, G1293, G1294, G1892, G1777, G1889, G410, G1377, G1804, G1237, 
-G1829, G1295, G1670, G1678, G1729, G1737, G1761, G1769, G340, G343, 
-G1781, G1238, G1325, G1893, G1340, G1352, G1673, G1681, G1801, G1897, 
-G1905, G391, G1299, G1676, G1684, G1081, G1733, G1093, G1741, G1765, 
-G1773, G1239, G1326, G1894, G1902, G392, G1360, G1003, G1677, G1013, 
-G1685, G1082, G1094, G1122, G1134, G1187, G1805, G1327, G1901, G1348, 
-G1909, G1758, G1766, G377, G1243, G393, G1004, G1014, G1083, G1095, 
-G1188, G1900, G1344, G1908, G1356, G1142, G378, G399, G1331, G1005, 
-G1015, G1764, G1126, G1130, G1772, G1138, G1189, G1343, G1355, G324, 
-G1099, G379, G400, G449, G1087, G1088, G1125, G1137, G1345, G1357, 
-G1397, G277, G1019, G280, G1009, G325, G364, G1193, G401, G1089, 
-G1127, G1139, G278, G281, G326, G365, G413, G1361, G1401, G445, 
-G1349, G1350, G1389, G1493, G1501, G1689, G279, G282, G346, G1143, 
-G366, G414, G453, G1131, G1132, G1351, G1365, G1405, G285, G347, 
-G367, G415, G1393, G556, G1505, G559, G1497, G1693, G1133, G1477, 
-G1485, G1809, G348, G1369, G1409, G557, G560, G1362, G1378, G1429, 
-G1437, G1686, G1774, G1910, G1918, G544, G1489, G547, G1481, G558, 
-G561, G1813, G1370, G1368, G417, G1384, G424, G508, G1441, G511, 
-G1433, G545, G548, G564, G1692, G1024, G1780, G1148, G1916, G1924, 
-G416, G1376, G421, G423, G509, G512, G546, G549, G719, G722, 
-G1023, G1147, G418, G420, G425, G510, G513, G552, G1025, G1149, 
-G419, G422, G441, G516, G725, G728, G1029, G1153, G433, G437, 
-G663, G666, G731, G746, G756, G770, G1461, G1469, G1413, G1421, 
-G1445, G1453, G532, G1473, G535, G1465, G495, G1425, G498, G1417, 
-G520, G1457, G523, G1449, G533, G536, G496, G499, G521, G524, 
-G534, G537, G497, G500, G522, G525, G540, G503, G528, G669, 
-G672, G569, G588, G618, G639, G867, G588a, G588b, G639a, G639b, 
-G675, G688, G696, G710, G73, G572, G573, G621, G622, G776, 
-G780, G784, G788, G812, G832, G836, G1509, G1517, G1525, G1533, 
-G1581, G1621, G1629, G792, G796, G800, G804, G808, G816, G820, 
-G824, G828, G871, G873, G875, G877, G879, G881, G883, G885, 
-G1541, G1549, G1557, G1565, G1573, G1589, G1597, G1605, G1613, G1, 
-G1513, G4, G1521, G7, G1529, G10, G1537, G28, G1585, G43, 
-G1625, G46, G1633, G886, G2, G5, G8, G11, G13, G1545, 
-G16, G1553, G19, G1561, G22, G1569, G25, G1577, G29, G31, 
-G1593, G34, G1601, G37, G1609, G40, G1617, G44, G47, G857, 
-G860, G863, G865, G14, G17, G20, G23, G26, G32, G35, 
-G38, G41, G1913, G1921, G887, G462, G74, G1637, G1917, G1647, 
-G1925, G1020, G1144, G1386, G1394, G1402, G1638, G1648, G1806, G1639, 
-G1649, G287, G350, G427, G429, G431, G1028, G1152, G1392, G1400, 
-G1408, G1812, G1216, G286, G349, G426, G428, G430, G67, G1643, 
-G70, G1653, G1215, G49, G53, G59, G61, G65, G68, G71, 
-G1217, G375, G1221, G376, G55, gate1, gate2, gate3, gate3inv, gate4, 
-gate5, gate5inv, gate6, gate6inv, gate7, gate7inv, gate8, gate8inv, gate9, gate10, 
-gate11, gate11inv, gate12, gate13, gate13inv, gate14, gate15, gate15inv, gate16, gate16inv, 
-gate17, gate18, gate18inv, gate19, gate20, gate20inv, gate21, gate22, gate22inv, gate23, 
-gate23inv, gate24, gate25, gate25inv, gate26, gate26inv, gate27, gate28, gate29, gate30, 
-gate31, gate32, gate33, gate34, gate35, gate36, gate37, gate38, gate39, gate39inv, 
-gate40, gate40inv, gate41, gate41inv, gate42, gate43, gate44, gate45, gate46, gate47, 
-gate48, gate49, gate50, gate50inv, gate51, gate52, gate53, gate53inv, gate54, gate54inv, 
-gate55, gate55inv, gate56, gate57, gate58, gate59, gate59inv, gate60, gate61, gate61inv, 
-gate62, gate63, gate64, gate65, gate66, gate67, gate68, gate69, gate70, gate71, 
-gate71inv, gate72, gate72inv, gate73, gate73inv, gate74, gate74inv, gate75: std_logic;
+  signal G149, G153, G156, G160, G165, G168, G171, G175, G179, G184,
+G188, G191, G194, G198, G202, G206, G231, G233, G241, G244,
+G245, G248, G517, G529, G541, G553, G859, G862, G907, G909,
+G911, G918, G919, G922, G926, G930, G932, G934, G938, G943,
+G947, G949, G1506, G1514, G1522, G1530, G1538, G1546, G1554, G1562,
+G1570, G1578, G1586, G1594, G1602, G1610, G1618, G1626, G1512, G1520,
+G1528, G1536, G1544, G1552, G1560, G1568, G1576, G1584, G1592, G1600,
+G1608, G1616, G1624, G1632, G50, G52, G56, G58, G62, G64,
+G251, G254, G288, G291, G299, G302, G318, G321, G327, G330,
+G352, G355, G369, G382, G385, G853, G856, G893, G954, G955,
+G1050, G1053, G1176, G1179, G1197, G1207, G1222, G1244, G1278, G1290,
+G1300, G1312, G1332, G1335, G1442, G1450, G1458, G1466, G1474, G1482,
+G1490, G1498, G1634, G1644, G1657, G1665, G1697, G1705, G1713, G1721,
+G1745, G1753, G1785, G1793, G1814, G1817, G1830, G1833, G1841, G1849,
+G1854, G1857, G1870, G1873, G1878, G1881, G1642, G1652, G1056, G1057,
+G1182, G1183, G1211, G1298, G1320, G1338, G1339, G457, G459, G482,
+G487, G492, G505, G1456, G1448, G1472, G1464, G1488, G1480, G1504,
+G1496, G956, G967, G978, G979, G980, G1661, G990, G1669, G1030,
+G1701, G1040, G1709, G1058, G1717, G1068, G1725, G1078, G1090, G1100,
+G1749, G1112, G1757, G1154, G1789, G1166, G1797, G1194, G1201, G1204,
+G1820, G1821, G1230, G1836, G1837, G1252, G1256, G1845, G1268, G1853,
+G1860, G1861, G1286, G1876, G1877, G1308, G1884, G1885, G1654, G1662,
+G1694, G1702, G1710, G1718, G1726, G1734, G1742, G1750, G1782, G1790,
+G1838, G1846, G297, G298, G361, G362, G404, G405, G1225, G1226,
+G1247, G1248, G1281, G1282, G1303, G1304, G1315, G1316, G998, G988,
+G268, G1038, G1048, G1076, G1066, G1098, G1120, G1174, G363, G1210,
+G373, G1276, G406, G565, G566, G614, G615, G958, G969, G1660,
+G984, G1668, G994, G1700, G1034, G1708, G1044, G1716, G1062, G1724,
+G1072, G1732, G1086, G1740, G1748, G1104, G1108, G1756, G1116, G1788,
+G1158, G1162, G1796, G1170, G1200, G1203, G1227, G1249, G1844, G1260,
+G1264, G1852, G1272, G1283, G1305, G1317, G1410, G1418, G1426, G1434,
+G269, G372, G983, G993, G1033, G1043, G1061, G1071, G1103, G1115,
+G1157, G1169, G1184, G1202, G1259, G1271, G1322, G374, G396, G1321,
+G1424, G1416, G1440, G1432, G985, G995, G1035, G1045, G1063, G1073,
+G1105, G1117, G1159, G1171, G1212, G1231, G1232, G1253, G1254, G1261,
+G1273, G1287, G1288, G1309, G1310, G1192, G397, G1330, G1000, G1010,
+G1233, G1255, G1289, G1311, G1381, G257, G999, G260, G989, G272,
+G1039, G294, G1049, G305, G1077, G308, G1067, G333, G1121, G358,
+G1175, G1220, G388, G1277, G398, G1109, G1110, G1163, G1164, G1234,
+G1265, G1266, G1822, G1862, G1865, G258, G261, G273, G1018, G1008,
+G295, G306, G309, G334, G359, G389, G1385, G1111, G1165, G1267,
+G1886, G259, G262, G274, G296, G307, G310, G335, G360, G1242,
+G390, G1828, G1868, G1869, G1373, G1798, G1825, G265, G314, G336,
+G407, G1293, G1294, G1892, G1777, G1889, G410, G1377, G1804, G1237,
+G1829, G1295, G1670, G1678, G1729, G1737, G1761, G1769, G340, G343,
+G1781, G1238, G1325, G1893, G1340, G1352, G1673, G1681, G1801, G1897,
+G1905, G391, G1299, G1676, G1684, G1081, G1733, G1093, G1741, G1765,
+G1773, G1239, G1326, G1894, G1902, G392, G1360, G1003, G1677, G1013,
+G1685, G1082, G1094, G1122, G1134, G1187, G1805, G1327, G1901, G1348,
+G1909, G1758, G1766, G377, G1243, G393, G1004, G1014, G1083, G1095,
+G1188, G1900, G1344, G1908, G1356, G1142, G378, G399, G1331, G1005,
+G1015, G1764, G1126, G1130, G1772, G1138, G1189, G1343, G1355, G324,
+G1099, G379, G400, G449, G1087, G1088, G1125, G1137, G1345, G1357,
+G1397, G277, G1019, G280, G1009, G325, G364, G1193, G401, G1089,
+G1127, G1139, G278, G281, G326, G365, G413, G1361, G1401, G445,
+G1349, G1350, G1389, G1493, G1501, G1689, G279, G282, G346, G1143,
+G366, G414, G453, G1131, G1132, G1351, G1365, G1405, G285, G347,
+G367, G415, G1393, G556, G1505, G559, G1497, G1693, G1133, G1477,
+G1485, G1809, G348, G1369, G1409, G557, G560, G1362, G1378, G1429,
+G1437, G1686, G1774, G1910, G1918, G544, G1489, G547, G1481, G558,
+G561, G1813, G1370, G1368, G417, G1384, G424, G508, G1441, G511,
+G1433, G545, G548, G564, G1692, G1024, G1780, G1148, G1916, G1924,
+G416, G1376, G421, G423, G509, G512, G546, G549, G719, G722,
+G1023, G1147, G418, G420, G425, G510, G513, G552, G1025, G1149,
+G419, G422, G441, G516, G725, G728, G1029, G1153, G433, G437,
+G663, G666, G731, G746, G756, G770, G1461, G1469, G1413, G1421,
+G1445, G1453, G532, G1473, G535, G1465, G495, G1425, G498, G1417,
+G520, G1457, G523, G1449, G533, G536, G496, G499, G521, G524,
+G534, G537, G497, G500, G522, G525, G540, G503, G528, G669,
+G672, G569, G588, G618, G639, G867, G588a, G588b, G639a, G639b,
+G675, G688, G696, G710, G73, G572, G573, G621, G622, G776,
+G780, G784, G788, G812, G832, G836, G1509, G1517, G1525, G1533,
+G1581, G1621, G1629, G792, G796, G800, G804, G808, G816, G820,
+G824, G828, G871, G873, G875, G877, G879, G881, G883, G885,
+G1541, G1549, G1557, G1565, G1573, G1589, G1597, G1605, G1613, G1,
+G1513, G4, G1521, G7, G1529, G10, G1537, G28, G1585, G43,
+G1625, G46, G1633, G886, G2, G5, G8, G11, G13, G1545,
+G16, G1553, G19, G1561, G22, G1569, G25, G1577, G29, G31,
+G1593, G34, G1601, G37, G1609, G40, G1617, G44, G47, G857,
+G860, G863, G865, G14, G17, G20, G23, G26, G32, G35,
+G38, G41, G1913, G1921, G887, G462, G74, G1637, G1917, G1647,
+G1925, G1020, G1144, G1386, G1394, G1402, G1638, G1648, G1806, G1639,
+G1649, G287, G350, G427, G429, G431, G1028, G1152, G1392, G1400,
+G1408, G1812, G1216, G286, G349, G426, G428, G430, G67, G1643,
+G70, G1653, G1215, G49, G53, G59, G61, G65, G68, G71,
+G1217, G375, G1221, G376, G55, gate1, gate1inv, gate2, gate2inv, gate3,
+gate4, gate5, gate6, gate6inv, gate7, gate8, gate8inv, gate9, gate9inv, gate10,
+gate11, gate12, gate12inv, gate13, gate14, gate15, gate15inv, gate16, gate16inv, gate17,
+gate18, gate19, gate20, gate20inv, gate21, gate22, gate22inv, gate23, gate24, gate24inv,
+gate25, gate25inv, gate26, gate27, gate27inv, gate28, gate29, gate29inv, gate30, gate31,
+gate31inv, gate32, gate32inv, gate33, gate34, gate34inv, gate35, gate36, gate36inv, gate37,
+gate37inv, gate38, gate38inv, gate39, gate39inv, gate40, gate41, gate42, gate43, gate43inv,
+gate44, gate45, gate45inv, gate46, gate47, gate47inv, gate48, gate48inv, gate49, gate49inv,
+gate50, gate51, gate52, gate52inv, gate53, gate53inv, gate54, gate55, gate55inv, gate56,
+gate57, gate58, gate59, gate59inv, gate60, gate61, gate62, gate62inv, gate63, gate64,
+gate65, gate66, gate67, gate67inv, gate68, gate69, gate70, gate71, gate71inv, gate72,
+gate73, gate73inv, gate74, gate75: std_logic;
 begin
-  G149 <= not gate7inv;
+  G149 <= not gate7;
   G153 <= not gate8inv;
-  G156 <= not gate9;
-  G160 <= not gate5inv;
-  G165 <= not gate11inv;
+  G156 <= not gate9inv;
+  G160 <= not gate5;
+  G165 <= not gate11;
   G168 <= not gate20inv;
   G171 <= not gate16inv;
   G175 <= not gate17;
   G179 <= not gate14;
-  G184 <= not gate1;
+  G184 <= not gate1inv;
   G188 <= not gate6inv;
-  G191 <= not gate12;
-  G194 <= not gate13inv;
+  G191 <= not gate12inv;
+  G194 <= not gate13;
   G198 <= not gate15inv;
-  G202 <= not gate3inv;
-  G206 <= not gate2;
+  G202 <= not gate3;
+  G206 <= not gate2inv;
   G231 <= G224 nand  G898;
   G233 <= G227 nand  G900;
   G241 <= not G237;
@@ -205,22 +206,22 @@ begin
   G943 <= gate4;
   G947 <= gate4;
   G949 <= not gate4;
-  G1506 <= gate7inv;
+  G1506 <= gate7;
   G1514 <= gate8inv;
-  G1522 <= gate9;
-  G1530 <= gate5inv;
-  G1538 <= gate11inv;
+  G1522 <= gate9inv;
+  G1530 <= gate5;
+  G1538 <= gate11;
   G1546 <= gate20inv;
   G1554 <= gate16inv;
   G1562 <= gate17;
   G1570 <= gate14;
-  G1578 <= gate1;
+  G1578 <= gate1inv;
   G1586 <= gate6inv;
-  G1594 <= gate12;
-  G1602 <= gate13inv;
+  G1594 <= gate12inv;
+  G1602 <= gate13;
   G1610 <= gate15inv;
-  G1618 <= gate3inv;
-  G1626 <= gate2;
+  G1618 <= gate3;
+  G1626 <= gate2inv;
   G1512 <= not G1506;
   G1520 <= not G1514;
   G1528 <= not G1522;
@@ -243,8 +244,8 @@ begin
   G58 <= G930 nand  G947;
   G62 <= G930 nand  G947;
   G64 <= G930 nand  G947;
-  G251 <= gate24;
-  G254 <= gate23inv;
+  G251 <= gate24inv;
+  G254 <= gate23;
   G288 <= gate28;
   G291 <= gate35;
   G299 <= gate10;
@@ -252,12 +253,12 @@ begin
   G318 <= G224 and  G938;
   G321 <= gate33;
   G327 <= gate25inv;
-  G330 <= gate31;
+  G330 <= gate31inv;
   G352 <= G227 and  G938;
-  G355 <= gate34;
+  G355 <= gate34inv;
   G369 <= G210 and  G241 and  G938;
-  G382 <= gate18inv;
-  G385 <= gate34;
+  G382 <= gate18;
+  G385 <= gate34inv;
   G853 <= G943 nand  G907;
   G856 <= G943 nand  G909;
   G893 <= G248 nand  G237;
@@ -266,16 +267,16 @@ begin
   G1050 <= gate21;
   G1053 <= gate30;
   G1176 <= gate33;
-  G1179 <= gate34;
-  G1197 <= gate24;
-  G1207 <= gate24;
-  G1222 <= gate23inv;
+  G1179 <= gate34inv;
+  G1197 <= gate24inv;
+  G1207 <= gate24inv;
+  G1222 <= gate23;
   G1244 <= gate25inv;
-  G1278 <= gate26inv;
+  G1278 <= gate26;
   G1290 <= G217 and  G245 and  G938;
-  G1300 <= gate31;
+  G1300 <= gate31inv;
   G1312 <= gate21;
-  G1332 <= gate32;
+  G1332 <= gate32inv;
   G1335 <= G221 and  G245 and  G938;
   G1442 <= G517;
   G1450 <= G517;
@@ -287,14 +288,14 @@ begin
   G1498 <= G553;
   G1634 <= G231 and  G934;
   G1644 <= G233 and  G934;
-  G1657 <= gate26inv;
-  G1665 <= gate26inv;
-  G1697 <= gate29;
-  G1705 <= gate29;
-  G1713 <= gate18inv;
-  G1721 <= gate18inv;
-  G1745 <= gate32;
-  G1753 <= gate32;
+  G1657 <= gate26;
+  G1665 <= gate26;
+  G1697 <= gate29inv;
+  G1705 <= gate29inv;
+  G1713 <= gate18;
+  G1721 <= gate18;
+  G1745 <= gate32inv;
+  G1753 <= gate32inv;
   G1785 <= gate21;
   G1793 <= gate21;
   G1814 <= gate28;
@@ -307,12 +308,12 @@ begin
   G1857 <= gate30;
   G1870 <= gate10;
   G1873 <= gate19;
-  G1878 <= gate29;
+  G1878 <= gate29inv;
   G1881 <= gate10;
   G1642 <= not G1634;
   G1652 <= not G1644;
   G1056 <= not gate60;
-  G1057 <= not gate67;
+  G1057 <= not gate67inv;
   G1182 <= not G1176;
   G1183 <= not G1179;
   G1211 <= not G1207;
@@ -338,13 +339,13 @@ begin
   G967 <= not (G909 and  G919 and  G943 and  G893);
   G978 <= not (G926 and  G949 and  G893);
   G979 <= G926 and  G949 and  G893;
-  G980 <= gate36;
+  G980 <= gate36inv;
   G1661 <= not G1657;
-  G990 <= gate36;
+  G990 <= gate36inv;
   G1669 <= not gate64;
-  G1030 <= gate38;
+  G1030 <= gate38inv;
   G1701 <= not gate69;
-  G1040 <= gate38;
+  G1040 <= gate38inv;
   G1709 <= not G1705;
   G1058 <= gate22inv;
   G1717 <= not G1713;
@@ -352,9 +353,9 @@ begin
   G1725 <= not gate75;
   G1078 <= G318;
   G1090 <= G318;
-  G1100 <= gate40inv;
+  G1100 <= gate40;
   G1749 <= not G1745;
-  G1112 <= gate40inv;
+  G1112 <= gate40;
   G1757 <= not G1753;
   G1154 <= G352;
   G1789 <= not G1785;
@@ -381,21 +382,21 @@ begin
   G1308 <= not G1300;
   G1884 <= not G1878;
   G1885 <= not G1881;
-  G1654 <= gate37;
-  G1662 <= gate37;
+  G1654 <= gate37inv;
+  G1662 <= gate37inv;
   G1694 <= gate39inv;
   G1702 <= gate39inv;
-  G1710 <= gate27;
-  G1718 <= gate27;
+  G1710 <= gate27inv;
+  G1718 <= gate27inv;
   G1726 <= G321;
   G1734 <= G321;
-  G1742 <= gate41inv;
-  G1750 <= gate41inv;
+  G1742 <= gate41;
+  G1750 <= gate41;
   G1782 <= G355;
   G1790 <= G355;
   G1838 <= G385;
   G1846 <= G385;
-  G297 <= gate67 nand  G1056;
+  G297 <= gate67inv nand  G1056;
   G298 <= gate60 nand  G1057;
   G361 <= G1179 nand  G1182;
   G362 <= G1176 nand  G1183;
@@ -521,15 +522,15 @@ begin
   G1192 <= not G1184;
   G397 <= G1312 nand  G1321;
   G1330 <= not G1322;
-  G1000 <= gate72inv;
-  G1010 <= gate72inv;
+  G1000 <= gate72;
+  G1010 <= gate72;
   G1233 <= G1222 nand  G1231;
   G1255 <= G1244 nand  G1253;
   G1289 <= G1278 nand  G1287;
   G1311 <= G1300 nand  G1309;
   G1381 <= not G374;
-  G257 <= gate61inv nand  G998;
-  G999 <= not gate61inv;
+  G257 <= gate61 nand  G998;
+  G999 <= not gate61;
   G260 <= G985 nand  G988;
   G989 <= not G985;
   G272 <= gate66 nand  G1038;
@@ -612,16 +613,16 @@ begin
   G1761 <= G262;
   G1769 <= G262;
   G340 <= G336;
-  G343 <= gate74inv;
+  G343 <= gate74;
   G1781 <= not G1777;
   G1238 <= G1822 nand  G1829;
   G1325 <= G1889 nand  G1892;
   G1893 <= not G1889;
   G1340 <= G407;
   G1352 <= G407;
-  G1673 <= gate62;
-  G1681 <= gate62;
-  G1801 <= gate74inv;
+  G1673 <= gate62inv;
+  G1681 <= gate62inv;
+  G1801 <= gate74;
   G1897 <= G336;
   G1905 <= G336;
   G391 <= G1295 nand  G1298;
@@ -916,16 +917,16 @@ begin
   G1513 <= not gate46;
   G4 <= gate53inv nand  G1520;
   G1521 <= not gate53inv;
-  G7 <= gate45 nand  G1528;
-  G1529 <= not gate45;
-  G10 <= gate52 nand  G1536;
-  G1537 <= not gate52;
-  G28 <= gate43 nand  G1584;
-  G1585 <= not gate43;
-  G43 <= gate54inv nand  G1624;
-  G1625 <= not gate54inv;
-  G46 <= gate47 nand  G1632;
-  G1633 <= not gate47;
+  G7 <= gate45inv nand  G1528;
+  G1529 <= not gate45inv;
+  G10 <= gate52inv nand  G1536;
+  G1537 <= not gate52inv;
+  G28 <= gate43inv nand  G1584;
+  G1585 <= not gate43inv;
+  G43 <= gate54 nand  G1624;
+  G1625 <= not gate54;
+  G46 <= gate47inv nand  G1632;
+  G1633 <= not gate47inv;
   G886 <= G871 and  G873 and  G875 and  G877 and  G879 and  G881 and  G883 and  G885;
   G2 <= G1506 nand  G1513;
   G5 <= G1514 nand  G1521;
@@ -937,10 +938,10 @@ begin
   G1553 <= not gate57;
   G19 <= gate44 nand  G1560;
   G1561 <= not gate44;
-  G22 <= gate50inv nand  G1568;
-  G1569 <= not gate50inv;
-  G25 <= gate49 nand  G1576;
-  G1577 <= not gate49;
+  G22 <= gate50 nand  G1568;
+  G1569 <= not gate50;
+  G25 <= gate49inv nand  G1576;
+  G1577 <= not gate49inv;
   G29 <= G1578 nand  G1585;
   G31 <= gate42 nand  G1592;
   G1593 <= not gate42;
@@ -948,8 +949,8 @@ begin
   G1601 <= not gate56;
   G37 <= gate55inv nand  G1608;
   G1609 <= not gate55inv;
-  G40 <= gate48 nand  G1616;
-  G1617 <= not gate48;
+  G40 <= gate48inv nand  G1616;
+  G1617 <= not gate48inv;
   G44 <= G1618 nand  G1625;
   G47 <= G1626 nand  G1633;
   G857 <= not (G776 and  G780 and  G784 and  G788 and  G792 and  G796 and  G800 and  G804);
@@ -1044,106 +1045,112 @@ begin
   G55 <= G375 nand  G376;
   G57 <= G55 and  G56;
   gate1 <= G128 xor  key(0);
+  gate1inv <= not gate1;
   gate2 <= G146 xnor  key(1);
+  gate2inv <= not gate2;
   gate3 <= G143 xnor  key(2);
-  gate3inv <= not gate3;
   gate4 <= G953 xnor  key(3);
-  gate5 <= G110 xor  key(4);
-  gate5inv <= not gate5;
+  gate5 <= G110 xnor  key(4);
   gate6 <= G131 xnor  key(5);
   gate6inv <= not gate6;
   gate7 <= G101 xnor  key(6);
-  gate7inv <= not gate7;
-  gate8 <= G104 xor  key(7);
+  gate8 <= G104 xnor  key(7);
   gate8inv <= not gate8;
   gate9 <= G107 xnor  key(8);
+  gate9inv <= not gate9;
   gate10 <= G184 xor  key(9);
   gate11 <= G113 xnor  key(10);
-  gate11inv <= not gate11;
-  gate12 <= G134 xnor  key(11);
+  gate12 <= G134 xor  key(11);
+  gate12inv <= not gate12;
   gate13 <= G137 xor  key(12);
-  gate13inv <= not gate13;
   gate14 <= G125 xnor  key(13);
-  gate15 <= G140 xor  key(14);
+  gate15 <= G140 xnor  key(14);
   gate15inv <= not gate15;
-  gate16 <= G119 xnor  key(15);
+  gate16 <= G119 xor  key(15);
   gate16inv <= not gate16;
-  gate17 <= G122 xnor  key(16);
+  gate17 <= G122 xor  key(16);
   gate18 <= G206 xnor  key(17);
-  gate18inv <= not gate18;
-  gate19 <= G202 xor  key(18);
-  gate20 <= G116 xor  key(19);
+  gate19 <= G202 xnor  key(18);
+  gate20 <= G116 xnor  key(19);
   gate20inv <= not gate20;
   gate21 <= G160 xor  key(20);
   gate22 <= G299 xor  key(21);
   gate22inv <= not gate22;
-  gate23 <= G153 xnor  key(22);
-  gate23inv <= not gate23;
-  gate24 <= G149 xor  key(23);
-  gate25 <= G188 xor  key(24);
+  gate23 <= G153 xor  key(22);
+  gate24 <= G149 xnor  key(23);
+  gate24inv <= not gate24;
+  gate25 <= G188 xnor  key(24);
   gate25inv <= not gate25;
   gate26 <= G156 xnor  key(25);
-  gate26inv <= not gate26;
-  gate27 <= G302 xor  key(26);
-  gate28 <= G165 xor  key(27);
-  gate29 <= G171 xor  key(28);
-  gate30 <= G175 xnor  key(29);
+  gate27 <= G302 xnor  key(26);
+  gate27inv <= not gate27;
+  gate28 <= G165 xnor  key(27);
+  gate29 <= G171 xnor  key(28);
+  gate29inv <= not gate29;
+  gate30 <= G175 xor  key(29);
   gate31 <= G191 xor  key(30);
-  gate32 <= G194 xnor  key(31);
+  gate31inv <= not gate31;
+  gate32 <= G194 xor  key(31);
+  gate32inv <= not gate32;
   gate33 <= G179 xnor  key(32);
   gate34 <= G198 xnor  key(33);
+  gate34inv <= not gate34;
   gate35 <= G168 xnor  key(34);
   gate36 <= G251 xnor  key(35);
-  gate37 <= G254 xnor  key(36);
+  gate36inv <= not gate36;
+  gate37 <= G254 xor  key(36);
+  gate37inv <= not gate37;
   gate38 <= G288 xnor  key(37);
-  gate39 <= G291 xnor  key(38);
+  gate38inv <= not gate38;
+  gate39 <= G291 xor  key(38);
   gate39inv <= not gate39;
   gate40 <= G327 xor  key(39);
-  gate40inv <= not gate40;
-  gate41 <= G330 xnor  key(40);
-  gate41inv <= not gate41;
+  gate41 <= G330 xor  key(40);
   gate42 <= G1589 xor  key(41);
-  gate43 <= G1581 xor  key(42);
-  gate44 <= G1557 xnor  key(43);
+  gate43 <= G1581 xnor  key(42);
+  gate43inv <= not gate43;
+  gate44 <= G1557 xor  key(43);
   gate45 <= G1525 xor  key(44);
-  gate46 <= G1509 xor  key(45);
-  gate47 <= G1629 xor  key(46);
-  gate48 <= G1613 xnor  key(47);
+  gate45inv <= not gate45;
+  gate46 <= G1509 xnor  key(45);
+  gate47 <= G1629 xnor  key(46);
+  gate47inv <= not gate47;
+  gate48 <= G1613 xor  key(47);
+  gate48inv <= not gate48;
   gate49 <= G1573 xor  key(48);
+  gate49inv <= not gate49;
   gate50 <= G1565 xor  key(49);
-  gate50inv <= not gate50;
   gate51 <= G1541 xnor  key(50);
-  gate52 <= G1533 xor  key(51);
+  gate52 <= G1533 xnor  key(51);
+  gate52inv <= not gate52;
   gate53 <= G1517 xnor  key(52);
   gate53inv <= not gate53;
-  gate54 <= G1621 xnor  key(53);
-  gate54inv <= not gate54;
-  gate55 <= G1605 xor  key(54);
+  gate54 <= G1621 xor  key(53);
+  gate55 <= G1605 xnor  key(54);
   gate55inv <= not gate55;
-  gate56 <= G1597 xor  key(55);
-  gate57 <= G1549 xnor  key(56);
-  gate58 <= G1913 xor  key(57);
+  gate56 <= G1597 xnor  key(55);
+  gate57 <= G1549 xor  key(56);
+  gate58 <= G1913 xnor  key(57);
   gate59 <= G1921 xor  key(58);
   gate59inv <= not gate59;
   gate60 <= G1050 xor  key(59);
   gate61 <= G995 xnor  key(60);
-  gate61inv <= not gate61;
-  gate62 <= G265 xnor  key(61);
-  gate63 <= G1030 xnor  key(62);
+  gate62 <= G265 xor  key(61);
+  gate62inv <= not gate62;
+  gate63 <= G1030 xor  key(62);
   gate64 <= G1665 xor  key(63);
-  gate65 <= G990 xor  key(64);
-  gate66 <= G1035 xnor  key(65);
+  gate65 <= G990 xnor  key(64);
+  gate66 <= G1035 xor  key(65);
   gate67 <= G1053 xor  key(66);
+  gate67inv <= not gate67;
   gate68 <= G274 xnor  key(67);
   gate69 <= G1697 xnor  key(68);
-  gate70 <= G1068 xor  key(69);
+  gate70 <= G1068 xnor  key(69);
   gate71 <= G1662 xnor  key(70);
   gate71inv <= not gate71;
   gate72 <= G269 xor  key(71);
-  gate72inv <= not gate72;
-  gate73 <= G1694 xor  key(72);
+  gate73 <= G1694 xnor  key(72);
   gate73inv <= not gate73;
-  gate74 <= G314 xor  key(73);
-  gate74inv <= not gate74;
+  gate74 <= G314 xnor  key(73);
   gate75 <= G1721 xnor  key(74);
 end behavioral;
