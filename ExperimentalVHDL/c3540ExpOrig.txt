@@ -1,9 +1,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity c3540Netlist is
   port (
     clock: in std_logic;
+    G375, G381, G407, G409, G405, G402: out std_logic;
     Anodes: out std_logic_vector(3 downto 0);
     seg: out std_logic_vector(6 downto 0)
   );
@@ -181,10 +184,19 @@ G150, G159, G169, G179, G190, G200, G213, G222, G223, G226,
 G232, G238, G244, G250, G257, G264, G270, G274, G283, G294, 
 G303, G311, G317, G322, G326, G329, G330, G343, G1698, G2897: std_logic;
   signal G353, G355, G361, G358, G351, G372, G369, G399, G364, G396, 
-G384, G367, G387, G393, G390, G378, G375, G381, G407, G409, 
-G405, G402: std_logic;
-  signal output: std_logic_vector(21 downto 0);
+G384, G367, G387, G393, G390, G378: std_logic;
+  signal output: std_logic_vector(15 downto 0);
+  signal refresh_counter : std_logic_vector(19 downto 0);
+  signal LED_activating_counter: std_logic_vector(1 downto 0);
+  signal temp: std_logic_vector(3 downto 0);
 begin
+  process(Clock)
+    begin
+        if(rising_edge(Clock)) then
+            refresh_counter <= refresh_counter + 1;
+        end if;
+  end process;
+  LED_activating_counter <= refresh_counter(19 downto 18);
   G432 <= G50;
   G442 <= not G50;
   G447 <= G58;
@@ -1870,10 +1882,96 @@ begin
   output(13) <= G393;
   output(14) <= G390;
   output(15) <= G378;
-  output(16) <= G375;
-  output(17) <= G381;
-  output(18) <= G407;
-  output(19) <= G409;
-  output(20) <= G405;
-  output(21) <= G402;
+  process(output)
+  begin
+    if LED_activating_counter = "00" then
+        Anodes <= "1110";
+        temp <= output(3 downto 0);
+        case temp is
+            when "0000" => seg <= "1000000"; -- "0"     
+            when "0001" => seg <= "1111001"; -- "1" 
+            when "0010" => seg <= "0100100"; -- "2" 
+            when "0011" => seg <= "0110000"; -- "3" 
+            when "0100" => seg <= "0011001"; -- "4" 
+            when "0101" => seg <= "0010010"; -- "5" 
+            when "0110" => seg <= "0000010"; -- "6" 
+            when "0111" => seg <= "1111000"; -- "7" 
+            when "1000" => seg <= "0000000"; -- "8"     
+            when "1001" => seg <= "0010000"; -- "9" 
+            when "1010" => seg <= "0001000"; -- a
+            when "1011" => seg <= "0000011"; -- b
+            when "1100" => seg <= "1000110"; -- C
+            when "1101" => seg <= "0100001"; -- d
+            when "1110" => seg <= "0000110"; -- E
+            when "1111" => seg <= "0001110"; -- F
+            when others => seg <= "0000000";
+        end case;
+    elsif LED_activating_counter = "01" then
+        Anodes <= "1101";
+        temp <= output(7 downto 4);
+        case temp is
+            when "0000" => seg <= "1000000"; -- "0"     
+            when "0001" => seg <= "1111001"; -- "1" 
+            when "0010" => seg <= "0100100"; -- "2" 
+            when "0011" => seg <= "0110000"; -- "3" 
+            when "0100" => seg <= "0011001"; -- "4" 
+            when "0101" => seg <= "0010010"; -- "5" 
+            when "0110" => seg <= "0000010"; -- "6" 
+            when "0111" => seg <= "1111000"; -- "7" 
+            when "1000" => seg <= "0000000"; -- "8"     
+            when "1001" => seg <= "0010000"; -- "9" 
+            when "1010" => seg <= "0001000"; -- a
+            when "1011" => seg <= "0000011"; -- b
+            when "1100" => seg <= "1000110"; -- C
+            when "1101" => seg <= "0100001"; -- d
+            when "1110" => seg <= "0000110"; -- E
+            when "1111" => seg <= "0001110"; -- F
+            when others => seg <= "0000000";
+        end case;
+    elsif LED_activating_counter = "10" then
+        Anodes <= "1011";
+        temp <= output(11 downto 8);
+        case temp is
+            when "0000" => seg <= "1000000"; -- "0"     
+            when "0001" => seg <= "1111001"; -- "1" 
+            when "0010" => seg <= "0100100"; -- "2" 
+            when "0011" => seg <= "0110000"; -- "3" 
+            when "0100" => seg <= "0011001"; -- "4" 
+            when "0101" => seg <= "0010010"; -- "5" 
+            when "0110" => seg <= "0000010"; -- "6" 
+            when "0111" => seg <= "1111000"; -- "7" 
+            when "1000" => seg <= "0000000"; -- "8"     
+            when "1001" => seg <= "0010000"; -- "9" 
+            when "1010" => seg <= "0001000"; -- a
+            when "1011" => seg <= "0000011"; -- b
+            when "1100" => seg <= "1000110"; -- C
+            when "1101" => seg <= "0100001"; -- d
+            when "1110" => seg <= "0000110"; -- E
+            when "1111" => seg <= "0001110"; -- F
+            when others => seg <= "0000000";
+        end case;
+    elsif LED_activating_counter = "11" then
+        Anodes <= "0111";
+        temp <= output(15 downto 12);
+        case temp is
+            when "0000" => seg <= "1000000"; -- "0"     
+            when "0001" => seg <= "1111001"; -- "1" 
+            when "0010" => seg <= "0100100"; -- "2" 
+            when "0011" => seg <= "0110000"; -- "3" 
+            when "0100" => seg <= "0011001"; -- "4" 
+            when "0101" => seg <= "0010010"; -- "5" 
+            when "0110" => seg <= "0000010"; -- "6" 
+            when "0111" => seg <= "1111000"; -- "7" 
+            when "1000" => seg <= "0000000"; -- "8"     
+            when "1001" => seg <= "0010000"; -- "9" 
+            when "1010" => seg <= "0001000"; -- a
+            when "1011" => seg <= "0000011"; -- b
+            when "1100" => seg <= "1000110"; -- C
+            when "1101" => seg <= "0100001"; -- d
+            when "1110" => seg <= "0000110"; -- E
+            when "1111" => seg <= "0001110"; -- F
+            when others => seg <= "0000000";
+        end case;
+    end if;
+  end process;
 end behavioral;
