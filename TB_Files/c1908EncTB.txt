@@ -15,7 +15,7 @@ architecture behavioral of c1908EncNetlist_tb is
   TG131, TG134, TG137, TG140, TG143, TG146, TG210, TG214, TG217, TG221, 
   TG224, TG227, TG234, TG237, TG469, TG472, TG475, TG478, TG898, TG900, 
   TG902, TG952, TG953: std_logic := '0';
-  signal Tkey: std_logic_vector(79 downto 0) := "11111101010111110011010001101100010110110001010001000111101110010000110011011110";
+  signal Tkey: std_logic_vector(74 downto 0) := "111100110100110010101000110100010001011111110100001001010010111100110011010";
   signal Tout: std_logic_vector(24 downto 0);
 begin
   L1: entity work.c1908EncNetlist(behavioral)
@@ -35,9 +35,9 @@ begin
     write(outLine, string'("c1908EncNetlist Original Output"));  -- write Toutput to output line
     writeline(result, outLine);  -- write output line to output file
 
-    -- Run simulation for a total of 810 ns
+    -- Run simulation for a total of 760 ns
     -- With Correct Key -- seen in c1908EncNetlist.vhd
-    Tkey <= "11111101010111110011010001101100010110110001010001000111101110010000110011011110";
+    Tkey <= "111100110100110010101000110100010001011111110100001001010010111100110011010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -48,7 +48,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 1 which has 1 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001010001000111001110010000110011011110";
+    Tkey <= "111100110100110010101000110100010001011111110000001001010010111100110011010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -59,7 +59,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 2 which has 2 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000111001110010000110011011110";
+    Tkey <= "111100010100110010101000110100010001011111110000001001010010111100110011010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -70,7 +70,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 3 which has 3 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000011001110010000110011011110";
+    Tkey <= "111100010100110010101000110100010001011111110000001001010010111100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -81,7 +81,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 4 which has 4 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000011001110010100110011011110";
+    Tkey <= "111100010100110010101000110100110001011111110000001001010010111100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -92,7 +92,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 5 which has 5 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000011001111010100110011011110";
+    Tkey <= "111100010100110010101000110100110000011111110000001001010010111100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -103,7 +103,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 6 which has 6 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000011001111010100110010011110";
+    Tkey <= "111100010100110010101000110100110000011111110000001001010010011100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -114,7 +114,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 7 which has 7 bits changed
-    Tkey <= "11111101010111110011010001101100010110110001110001000011001111010110110010011110";
+    Tkey <= "111100010100110010101001110100110000011111110000001001010010011100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -125,7 +125,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 8 which has 8 bits changed
-    Tkey <= "11111111010111110011010001101100010110110001110001000011001111010110110010011110";
+    Tkey <= "111100010100110000101001110100110000011111110000001001010010011100110010010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -136,7 +136,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 9 which has 9 bits changed
-    Tkey <= "10111111010111110011010001101100010110110001110001000011001111010110110010011110";
+    Tkey <= "111100010100110000101001110100110000011111110000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -147,7 +147,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 10 which has 10 bits changed
-    Tkey <= "10111111010111110011010001101100010110111001110001000011001111010110110010011110";
+    Tkey <= "111100010100110000101001110100110000011111111000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -158,7 +158,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 11 which has 11 bits changed
-    Tkey <= "10111111010111110001010001101100010110111001110001000011001111010110110010011110";
+    Tkey <= "111100010100110000101001110100111000011111111000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -169,7 +169,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 12 which has 12 bits changed
-    Tkey <= "10111111010011110001010001101100010110111001110001000011001111010110110010011110";
+    Tkey <= "111100010100110000101001110100111000011011111000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -180,7 +180,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 13 which has 13 bits changed
-    Tkey <= "10111111010011110001010001101100010110111001110001000010001111010110110010011110";
+    Tkey <= "111100010100110000101001110100111010011011111000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -191,7 +191,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 14 which has 14 bits changed
-    Tkey <= "10111111010011110001010001101100010110011001110001000010001111010110110010011110";
+    Tkey <= "111100010100110000101001110100111010011010111000001001010010011100110000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -202,7 +202,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 15 which has 15 bits changed
-    Tkey <= "10111111010011110001010001101100010110011001110001000010001111010110110000011110";
+    Tkey <= "111100010100110000101001110100111010011010111000001001010010011100010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -213,7 +213,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 16 which has 16 bits changed
-    Tkey <= "10111111010011110001010001101100010110011001110001001010001111010110110000011110";
+    Tkey <= "111100010100110000111001110100111010011010111000001001010010011100010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -224,7 +224,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 17 which has 17 bits changed
-    Tkey <= "10111111010011110001010001101100010010011001110001001010001111010110110000011110";
+    Tkey <= "111100010100110000111001110100111010011010111000001001110010011100010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -235,7 +235,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 18 which has 18 bits changed
-    Tkey <= "10111111010011110001011001101100010010011001110001001010001111010110110000011110";
+    Tkey <= "111100010100110001111001110100111010011010111000001001110010011100010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -246,7 +246,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 19 which has 19 bits changed
-    Tkey <= "10111111010011110001011001101100010010011001111001001010001111010110110000011110";
+    Tkey <= "111100010100110001111001110100111010011010111000001001110010011110010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -257,7 +257,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 20 which has 20 bits changed
-    Tkey <= "10111111010011110101011001101100010010011001111001001010001111010110110000011110";
+    Tkey <= "111110010100110001111001110100111010011010111000001001110010011110010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -268,7 +268,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 21 which has 21 bits changed
-    Tkey <= "10111111010011110100011001101100010010011001111001001010001111010110110000011110";
+    Tkey <= "111110010100110001111001110100111010011010111010001001110010011110010000010";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -279,7 +279,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 22 which has 22 bits changed
-    Tkey <= "10111110010011110100011001101100010010011001111001001010001111010110110000011110";
+    Tkey <= "111110010100110001111001110100111010011010111010001001110010011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -290,7 +290,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 23 which has 23 bits changed
-    Tkey <= "10111110010011110100011011101100010010011001111001001010001111010110110000011110";
+    Tkey <= "111110010100110001111001110100111010010010111010001001110010011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -301,7 +301,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 24 which has 24 bits changed
-    Tkey <= "10111110010011110100011011101100010010011001111001001010001111010110111000011110";
+    Tkey <= "111110010100110001111001110100111010010010101010001001110010011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -312,7 +312,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 25 which has 25 bits changed
-    Tkey <= "10111110010011110100011011101100010010011001111001001000001111010110111000011110";
+    Tkey <= "111110000100110001111001110100111010010010101010001001110010011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -323,7 +323,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 26 which has 26 bits changed
-    Tkey <= "10111110010011110100011011101100010010011001111001001000001111010110111000011010";
+    Tkey <= "111110000100110001111001110100111010000010101010001001110010011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -334,7 +334,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 27 which has 27 bits changed
-    Tkey <= "10111010010011110100011011101100010010011001111001001000001111010110111000011010";
+    Tkey <= "111110000100110001111001110100111010000010101010001001110011011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -345,7 +345,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 28 which has 28 bits changed
-    Tkey <= "10111010010011110100011011101100010010011001111001101000001111010110111000011010";
+    Tkey <= "111110000100110001110001110100111010000010101010001001110011011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -356,7 +356,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 29 which has 29 bits changed
-    Tkey <= "10111010010011110100011011101100010010011001111001101000000111010110111000011010";
+    Tkey <= "111110000100110001110001110100111010000010101010001101110011011110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -367,7 +367,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 30 which has 30 bits changed
-    Tkey <= "10111010010011110100011011101101010010011001111001101000000111010110111000011010";
+    Tkey <= "111110000100110001110001110100111010000010101010001101110011010110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -378,7 +378,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 31 which has 31 bits changed
-    Tkey <= "10111010010011110100011011101111010010011001111001101000000111010110111000011010";
+    Tkey <= "111110000100110001110001010100111010000010101010001101110011010110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -389,7 +389,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 32 which has 32 bits changed
-    Tkey <= "10111010010011110100011011101111010010011001111001101000010111010110111000011010";
+    Tkey <= "111110000100110001110001010100111010000010101011001101110011010110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -400,7 +400,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 33 which has 33 bits changed
-    Tkey <= "10111010010011110100111011101111010010011001111001101000010111010110111000011010";
+    Tkey <= "111111000100110001110001010100111010000010101011001101110011010110010000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -411,7 +411,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 34 which has 34 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111001101000010111010110111000011010";
+    Tkey <= "111111000100110001110001010100111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -422,7 +422,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 35 which has 35 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111001101000010011010110111000011010";
+    Tkey <= "111111000100110001110011010100111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -433,7 +433,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 36 which has 36 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111101101000010011010110111000011010";
+    Tkey <= "111111000100110001110011010110111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -444,7 +444,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 37 which has 37 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111101101000010011010110111000011000";
+    Tkey <= "101111000100110001110011010110111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -455,7 +455,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 38 which has 38 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111101101000010011010110101000011000";
+    Tkey <= "101111000000110001110011010110111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -466,7 +466,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 39 which has 39 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111101111000010011010110101000011000";
+    Tkey <= "101111000000110001110011010111111010000010101011001101110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -477,7 +477,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 40 which has 40 bits changed
-    Tkey <= "10101010010011110100111011101111010010011001111101111000010011011110101000011000";
+    Tkey <= "101111000000110001110011010111111010000010101011001100110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -488,7 +488,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 41 which has 41 bits changed
-    Tkey <= "10101010010010110100111011101111010010011001111101111000010011011110101000011000";
+    Tkey <= "101111000000110001110011010111111010000010101011000100110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -499,7 +499,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 42 which has 42 bits changed
-    Tkey <= "10101010010010110100111011101111010010011001111101111000010011111110101000011000";
+    Tkey <= "101111000000110001010011010111111010000010101011000100110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -510,7 +510,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 43 which has 43 bits changed
-    Tkey <= "10001010010010110100111011101111010010011001111101111000010011111110101000011000";
+    Tkey <= "101111000000100001010011010111111010000010101011000100110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -521,7 +521,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 44 which has 44 bits changed
-    Tkey <= "10001010010010110100101011101111010010011001111101111000010011111110101000011000";
+    Tkey <= "101111000000100001010011010111111010000010101011010100110011010110011000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -532,7 +532,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 45 which has 45 bits changed
-    Tkey <= "10001010010010110100101011101111010010011001111101111000010011111111101000011000";
+    Tkey <= "101111000000100001010011010111111010000010101011010100110011010110001000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -543,7 +543,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 46 which has 46 bits changed
-    Tkey <= "10001010010010110100101111101111010010011001111101111000010011111111101000011000";
+    Tkey <= "101111000000100001010011010111111110000010101011010100110011010110001000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -554,7 +554,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 47 which has 47 bits changed
-    Tkey <= "10001010010010110100101111101111010010011101111101111000010011111111101000011000";
+    Tkey <= "101111000000100001010011010111111110000010101011110100110011010110001000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -565,7 +565,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 48 which has 48 bits changed
-    Tkey <= "10001010010010110100101111101111011010011101111101111000010011111111101000011000";
+    Tkey <= "101111000000100001010011010111111110100010101011110100110011010110001000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -576,7 +576,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 49 which has 49 bits changed
-    Tkey <= "10001010010010110100101111101111001010011101111101111000010011111111101000011000";
+    Tkey <= "101111000000101001010011010111111110100010101011110100110011010110001000000";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -587,7 +587,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 50 which has 50 bits changed
-    Tkey <= "10001010011010110100101111101111001010011101111101111000010011111111101000011000";
+    Tkey <= "101111000000101001010011010111111110100010101011110100110011010110001000100";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -598,7 +598,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 51 which has 51 bits changed
-    Tkey <= "10001010111010110100101111101111001010011101111101111000010011111111101000011000";
+    Tkey <= "101111000000101001010011010011111110100010101011110100110011010110001000100";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -609,7 +609,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 52 which has 52 bits changed
-    Tkey <= "10001010111010110100101111101111001010011101111101111000010011111111101000010000";
+    Tkey <= "101111000000101001010011010011111110100010101011110100110011010110001100100";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -620,7 +620,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 53 which has 53 bits changed
-    Tkey <= "10001010111010110100101111101111001010011101111101111000010011111111001000010000";
+    Tkey <= "101111000000101001010011010011111110100010101011110100110011000110001100100";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -631,7 +631,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 54 which has 54 bits changed
-    Tkey <= "10001010111010110100101111101111001010011101111101111000010011111111001000110000";
+    Tkey <= "101111000000101001010011010011111110100010101011110100110011000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -642,7 +642,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 55 which has 55 bits changed
-    Tkey <= "10001010111010111100101111101111001010011101111101111000010011111111001000110000";
+    Tkey <= "101111000000101001010011010011111110100010101011110100111011000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -653,7 +653,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 56 which has 56 bits changed
-    Tkey <= "10001010101010111100101111101111001010011101111101111000010011111111001000110000";
+    Tkey <= "101111000000001001010011010011111110100010101011110100111011000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -664,7 +664,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 57 which has 57 bits changed
-    Tkey <= "00001010101010111100101111101111001010011101111101111000010011111111001000110000";
+    Tkey <= "100111000000001001010011010011111110100010101011110100111011000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -675,7 +675,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 58 which has 58 bits changed
-    Tkey <= "00001010101010111100101111101011001010011101111101111000010011111111001000110000";
+    Tkey <= "100111000000001001010011000011111110100010101011110100111011000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -686,7 +686,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 59 which has 59 bits changed
-    Tkey <= "00001010101010111100101111101011001010011101111101111000010011111111001000110001";
+    Tkey <= "100111000000001001010011000011111110100010101011110100111001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -697,7 +697,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 60 which has 60 bits changed
-    Tkey <= "00001010101010111100101110101011001010011101111101111000010011111111001000110001";
+    Tkey <= "000111000000001001010011000011111110100010101011110100111001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -708,7 +708,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 61 which has 61 bits changed
-    Tkey <= "00001010101010111100101110111011001010011101111101111000010011111111001000110001";
+    Tkey <= "000111000000001001010111000011111110100010101011110100111001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -719,7 +719,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 62 which has 62 bits changed
-    Tkey <= "00001010101010111100101110111011001010011101111101111000010011111111001100110001";
+    Tkey <= "000111000000001001010111000011111110100000101011110100111001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -730,7 +730,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 63 which has 63 bits changed
-    Tkey <= "00001010101010111100101110111011001010011100111101111000010011111111001100110001";
+    Tkey <= "000111001000001001010111000011111110100000101011110100111001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -741,7 +741,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 64 which has 64 bits changed
-    Tkey <= "00000010101010111100101110111011001010011100111101111000010011111111001100110001";
+    Tkey <= "000111001000001001010111000011111110100000101011110100101001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -752,7 +752,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 65 which has 65 bits changed
-    Tkey <= "00000010101010111100101110111011001010011100101101111000010011111111001100110001";
+    Tkey <= "000111001001001001010111000011111110100000101011110100101001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -763,7 +763,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 66 which has 66 bits changed
-    Tkey <= "00000010101000111100101110111011001010011100101101111000010011111111001100110001";
+    Tkey <= "000111001001001001010111000011101110100000101011110100101001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -774,7 +774,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 67 which has 67 bits changed
-    Tkey <= "00000010101000111100101110111011001011011100101101111000010011111111001100110001";
+    Tkey <= "000011001001001001010111000011101110100000101011110100101001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -785,7 +785,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 68 which has 68 bits changed
-    Tkey <= "00000010101000111100101110111011001011011100101101111000010011111111001100100001";
+    Tkey <= "000011001001001001010111000011101110100000001011110100101001000110001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -796,7 +796,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 69 which has 69 bits changed
-    Tkey <= "00000010101000111100101110111011001011011100101100111000010011111111001100100001";
+    Tkey <= "000011001001001001010111000011101110100000001011110100101001000010001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -807,7 +807,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 70 which has 70 bits changed
-    Tkey <= "00000010101000011100101110111011001011011100101100111000010011111111001100100001";
+    Tkey <= "000011001001001001010111000011101110100000001011110100101001000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -818,7 +818,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 71 which has 71 bits changed
-    Tkey <= "00000010101000011100101110011011001011011100101100111000010011111111001100100001";
+    Tkey <= "000011001001001001010111000011101110100000001011110100101101000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -829,7 +829,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 72 which has 72 bits changed
-    Tkey <= "00000010101000011100101110011011001011011110101100111000010011111111001100100001";
+    Tkey <= "000011001001001001010111001011101110100000001011110100101101000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -840,7 +840,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 73 which has 73 bits changed
-    Tkey <= "00000010101000011100101110011011001011011110101100111000010001111111001100100001";
+    Tkey <= "000011001001001001010111001011101110100000001011110110101101000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -851,7 +851,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 74 which has 74 bits changed
-    Tkey <= "00000010101000011100101110011011001011001110101100111000010001111111001100100001";
+    Tkey <= "000011001011001001010111001011101110100000001011110110101101000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
@@ -862,62 +862,7 @@ begin
     wait for 1 ns;
 
         -- With Incorrect Key 75 which has 75 bits changed
-    Tkey <= "00000010101000011100101110011011101011001110101100111000010001111111001100100001";
-    wait for 8 ns;
-    Toutput := to_bitvector(Tout);  -- save output to variable
-    write(outLine, Tkey);  -- write Tkey to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-
-        -- With Incorrect Key 76 which has 76 bits changed
-    Tkey <= "00000010101000011100101110011011101011001110101100111000010001101111001100100001";
-    wait for 8 ns;
-    Toutput := to_bitvector(Tout);  -- save output to variable
-    write(outLine, Tkey);  -- write Tkey to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-
-        -- With Incorrect Key 77 which has 77 bits changed
-    Tkey <= "00000010101000011100101110011011101001001110101100111000010001101111001100100001";
-    wait for 8 ns;
-    Toutput := to_bitvector(Tout);  -- save output to variable
-    write(outLine, Tkey);  -- write Tkey to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-
-        -- With Incorrect Key 78 which has 78 bits changed
-    Tkey <= "00000010101000001100101110011011101001001110101100111000010001101111001100100001";
-    wait for 8 ns;
-    Toutput := to_bitvector(Tout);  -- save output to variable
-    write(outLine, Tkey);  -- write Tkey to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-
-        -- With Incorrect Key 79 which has 79 bits changed
-    Tkey <= "00000010101000001100101110010011101001001110101100111000010001101111001100100001";
-    wait for 8 ns;
-    Toutput := to_bitvector(Tout);  -- save output to variable
-    write(outLine, Tkey);  -- write Tkey to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-    write(outLine, Toutput);  -- write Touput to output line
-    writeline(result, outLine);  -- write output line to output file
-    wait for 1 ns;
-
-        -- With Incorrect Key 80 which has 80 bits changed
-    Tkey <= "00000010101000001100101110010011101001001110101110111000010001101111001100100001";
+    Tkey <= "000011001011001101010111001011101110100000001011110110101101000011001100101";
     wait for 8 ns;
     Toutput := to_bitvector(Tout);  -- save output to variable
     write(outLine, Tkey);  -- write Tkey to output line
