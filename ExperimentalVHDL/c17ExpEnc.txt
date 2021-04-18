@@ -1,0 +1,71 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity c17EncNetlist is
+  port (
+    Clock: in std_logic;
+    switches: in std_logic_vector(3 downto 0);
+    Anodes : out STD_LOGIC_VECTOR(3 downto 0);
+    seg: out STD_LOGIC_VECTOR(6 downto 0)
+  );
+end c17EncNetlist;
+
+architecture behavioral of c17EncNetlist is
+  signal key: std_logic_vector(2 downto 0) := "101";
+  signal G10gat, G11gat, G16gat, G19gat, temp1, temp2, gate1, gate2, gate2inv, gate3: std_logic;
+  signal G1gat, G2gat, G3gat, G6gat, G7gat: std_logic := '0'; 
+  signal G22gat, G23gat: std_logic;
+  signal refresh_counter : std_logic_vector(19 downto 0);
+  signal LED_activating_counter: std_logic_vector(1 downto 0);
+  signal LED_BCD: std_logic_vector(1 downto 0);
+begin
+  process(Clock)
+    begin
+        if(rising_edge(Clock)) then
+            refresh_counter <= refresh_counter + 1;
+        end if;
+  end process;
+  LED_activating_counter <= refresh_counter(19 downto 18);
+  G10gat <= G1gat nand  G3gat;
+  G11gat <= G3gat nand  G6gat;
+  G16gat <= G2gat nand  G11gat;
+  G19gat <= G11gat nand  G7gat;
+  temp1 <= G10gat nand  gate1;
+  temp2 <= gate1 nand  G19gat;
+  gate1 <= G16gat xnor  key(0);
+  G22gat <= gate2inv;
+  gate2 <= temp1 xnor  key(1);
+  gate2inv <= not gate2;
+  G23gat <= gate3;
+  gate3 <= temp2 xnor  key(2);
+  LED_BCD(0) <= G22gat;
+  LED_BCD(1) <= G23gat;
+  process(LED_BCD)
+  begin
+    if LED_activating_counter = "00" then
+        Anodes <= "1110";
+        case LED_BCD is
+            when "00" => seg <= "1000000"; -- "0"
+            when "01" => seg <= "1111001"; -- "1" 
+            when "10" => seg <= "0100100"; -- "2" 
+            when "11" => seg <= "0110000"; -- "3"
+        end case;
+    end if;
+  end process;
+  process(switches)
+  begin
+  if(switches = "0001") then
+    key <= "101";
+  elsif(switches = "0010") then
+    key <= "001";  
+  elsif(switches = "0100") then
+    key <= "011";
+  elsif(switches = "1000") then
+    key <= "111";
+  else
+    key <= "101";
+  end if;
+  end process;
+end behavioral;
