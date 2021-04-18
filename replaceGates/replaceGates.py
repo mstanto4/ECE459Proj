@@ -39,10 +39,13 @@ curline = curline + 1
 
 lineLen = len(lines)
 
+#replaces number of gates for given argument
 for i in range(0, int(sys.argv[3])):
+	#if -> then only replace one input, which corresponds to the output on the right side of the arrow
 	if("->" in nodes[i]):
 		indicies = []
 		arrow = nodes[i].split("->")
+		#determine which line in the netlist corresponds to the fault indicated
 		for j in range(curline, lineLen):
 			if(arrow[0] in lines[j]):
 				index = lines[j].index(arrow[0])
@@ -52,6 +55,7 @@ for i in range(0, int(sys.argv[3])):
 					if(arrow[1] in lines[j]):
 						indicies.append(j)
 				
+		#randomly choose xor or xnor
 		randop = random.randint(0,1)
 
 		#insert xnor
@@ -62,11 +66,13 @@ for i in range(0, int(sys.argv[3])):
 			op = "xor"
 			value = 0
 
+		#randomly choose whether to add inverter or not
 		randinv = random.randint(0,1)
 
 		newgateStr = gateStr + str(i+1)
 		invStr = newgateStr + "inv"
 
+		#replace the lines which were found above with the new gate output
 		for k in range(0, len(indicies)):
 			curindex = lines[indicies[k]].index(arrow[0])
 			while(lines[indicies[k]][curindex+len(arrow[0])] != "," and lines[indicies[k]][curindex+len(arrow[0])] != ")"):
@@ -78,26 +84,20 @@ for i in range(0, int(sys.argv[3])):
 				lines[indicies[k]] = lines[indicies[k]][0:curindex] + invStr + lines[indicies[k]][curindex+len(arrow[0]):len(lines[indicies[k]])]
 
 		#do not add inverter
+		#add line for new gates
 		if(randinv == 0):
 			key.insert(0,value)
 			insertVal = newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))"
-
-			#TEST
-			#print("insert val is", insertVal)
-
 			lines.append(insertVal)
 		#add inverter
 		else:
-
-			#TEST
-			#print("invertor?")
-
 			if(value == 1):
 				key.insert(0,0)
 			else:
 				key.insert(0,1)
 			lines.append(newgateStr + " = " + op + "(" + arrow[0] + ", key(" + str(i) + "))") 
 			lines.append(invStr + " = not(" + newgateStr + ")")
+	#if no -> then replace all references of that input
 	else:	
 		indicies = []
 		for j in range(curline, lineLen):
@@ -117,24 +117,22 @@ for i in range(0, int(sys.argv[3])):
 			op = "xor"
 			value = 0
 
+		#randomly choose xor or xnor
 		randinv = random.randint(0,1)
 
 		newgateStr = gateStr + str(i+1)
-
+		
+		#replace the lines which were found above with the new gate output
 		invStr = newgateStr + "inv"
 		for k in range(0, len(indicies)):
 			curindex = lines[indicies[k]].index(nodes[i])
 			while(lines[indicies[k]][curindex+len(nodes[i])] != "," and lines[indicies[k]][curindex+len(nodes[i])] != ")"):
 				curindex = lines[indicies[k]].index(nodes[i], curindex)
-			#insert fix here
-			#temp = lines[indicies[k]].split(nodes[i])
 
 			if(randinv == 0):
 				lines[indicies[k]] = lines[indicies[k]][0:curindex] + newgateStr + lines[indicies[k]][curindex+len(nodes[i]):len(lines[indicies[k]])]
-				#lines[indicies[k]] = temp[0] + newgateStr + temp[1]
 			else:		
 				lines[indicies[k]] = lines[indicies[k]][0:curindex] + invStr + lines[indicies[k]][curindex+len(nodes[i]):len(lines[indicies[k]])]
-				#lines[indicies[k]] = temp[0] + invStr + temp[1]
 
 		#node is output
 		if(len(indicies) == 0):
@@ -148,6 +146,7 @@ for i in range(0, int(sys.argv[3])):
 					else:
 						lines.append(nodes[i] + " = buf(" + invStr + ")")
 			#do not add inverter
+			#add line for new gates
 			if(randinv == 0):
 				key.insert(0,value)	
 				lines.append(newgateStr + " = " + op + "(" + tempStr + str(i) + ", key(" + str(i) + "))") 
@@ -162,6 +161,7 @@ for i in range(0, int(sys.argv[3])):
 		
 		else:
 			#do not add inverter
+			#add line for new gates
 			if(randinv == 0):
 				key.insert(0,value)	
 				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
@@ -174,10 +174,9 @@ for i in range(0, int(sys.argv[3])):
 				lines.append(newgateStr + " = " + op + "(" + nodes[i] + ", key(" + str(i) + "))") 
 				lines.append(invStr + " = not(" + newgateStr + ")")
 
+#print content 
 for line in lines:
 	print(line)
-#
-# TEST
 keyStr = "# "
 for bit in key:
 	keyStr = keyStr + str(bit)
