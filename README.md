@@ -2,6 +2,24 @@
 
 ## Members: Megan Stanton, Jessica Stevens, Kishan Tailor
 
+### Script Location and Purpose
+NLtoVHDL.py -> Main Directory -> Convert Original Netlist to VHDL   
+EncNLtoEncVHDL.py -> Main Directory -> Convert Encrypted Netlist to VHDL   
+NLtoTB.py -> Main Directory -> Convert Any Netlist to Corresponding Testbench File   
+NLtoExperimental -> Main Directory -> Not Completely Functional, Reduced Time Required to Make Experimental Files   
+faultAnalysis.py -> faultImpact Folder -> Calculates Fault Impact Given Output From HOPE   
+replaceGates.py -> replaceGates Folder -> Used to Insert Gates and Produce Encrypted Netlist   
+FindObfuscation.py -> Obfuscated Folder -> Calculates Hamming Distance   
+
+### Other Folders
+EncNetlists -> Contains Encrypted Netlists Files for the 3 Circuits    
+EncVHDL_Files -> Contains Encrypted VHDL Files for the 3 Circuits   
+ExperimentalConstraints -> Contains the Constraint Files used in Experimental Testing   
+Experimental VHDL -> Contains the VHDL Files used in Experimental Testing   
+Netlists -> Contains Original Netlist Files for the 3 Circuits   
+TB_Files -> Contains Testbench Files for the 3 Circuits Encrypted and Basic   
+VHDL_Files -> Contains Original VHDL Files for the 3 Circuits   
+simResults -> Contains the Simulation Results Outputted by the Testbench Files   
 
 ### Command Line Instructions for Each Program
 #### Calculating Fault Impact (from main repository)
