@@ -59,6 +59,10 @@ simResults -> Contains the Simulation Results Outputted by the Testbench Files
 	python3 NLtoTB.py EncNetlists/c1908EncNetlist.txt > TB_Files/c1908EncTB.txt
 	python3 NLtoTB.py EncNetlists/c3540EncNetlist.txt > TB_Files/c3540EncTB.txt
 
+#### Calculate Hamming Distance
+##### Place Simulation Results in Obfuscated/testFile.txt
+	cd Obfuscated
+	python3 FindObfucation.py
 
 
 
