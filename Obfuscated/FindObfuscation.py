@@ -1,5 +1,5 @@
 
-f = open("c17EncNetlist.txt")
+f = open("testFile.txt")
 
 lines = f.readlines()
 listofNums = []
